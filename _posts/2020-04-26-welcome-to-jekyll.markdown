@@ -1,10 +1,21 @@
 ---
-layout: post
+layout: default
 title:  "Welcome to Jekyll!"
 date:   2020-04-26 17:45:57 +0200
-categories: jekyll update
+permalink: /welcome-to-jekyll
+tags: test abc
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates 
+your site when a file is updated.
+
+<!--more-->
+
+$$
+x=123
+$$
+
+Ici, \\(x\\) est blhablha
 
 Jekyll requires blog post files to be named according to the following format:
 
@@ -21,6 +32,14 @@ end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
+{% highlight php %}
+<?php
+
+$a = 123;
+{% endhighlight %}
+
+![plater](/assets/imgs/plater.jpg)
+{: style="text-align: center;"}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
