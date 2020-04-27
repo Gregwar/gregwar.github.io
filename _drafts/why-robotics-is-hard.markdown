@@ -199,7 +199,7 @@ robots themselves.
 <figure class="text-center">
     <img src="/assets/robotics/sim.jpg" />
     <figcaption>
-        Our simulation environment for humanoid robot playing soccer
+        Our simulation environments for humanoid robot playing soccer
     </figcaption>
 </figure>
 
@@ -208,5 +208,6 @@ of the [ROS project](https://www.ros.org/).
 
 # Conclusion
 
-This post is a subjective point of view but I hope it gives you some insight. Keep also in mind that having a final
-result that works is a quite satisfying feeling, so all those efforts are worth it!
+In my team, we try to master all the aspects of designing robots almost from scratch that eventually performs
+complex tasks, and this comes with a lot of difficulties. But getting the final functionning result is a quite satisfying
+feeling that makes those efforts worth it!
