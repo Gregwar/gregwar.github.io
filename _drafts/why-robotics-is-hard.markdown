@@ -74,9 +74,18 @@ That is why we need to do *dimensions reduction*:
 * Can we use only a subset of the robot possibilities?
 * Can we split up our problem in different parts, that separately have lower dimensions?
 
+
 # Uncertain information
 
 ## Information is partial
+
+<figure class="float-right">
+  <img src="/assets/imgs/fog-of-war.png" width="256" />
+  <figcaption class="text-center">
+    Fog of war: example<br/>
+    of partial information
+  </figcaption>
+</figure>
 
 The information available for a robot at a given point is only a partial view of its environment. This is because
 the environment itself is the physical world which is very complex and not all of it can be captured.

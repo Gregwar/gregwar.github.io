@@ -148,6 +148,8 @@ p a {
 
 figcaption {
     font-style: italic;
+    line-height:1.0;
+    font-size:90%;
 }
 
 .quote::before {
