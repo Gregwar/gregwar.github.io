@@ -10,15 +10,20 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet"> 
+
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 {% seo %}
   </head>
 
   <body>
-    <nav class="mb-2 navbar navbar-expand-lg navbar-dark bg-info text-light">
+    <nav class="mb-2 navbar navbar-expand-lg navbar-dark bg-dark text-light">
       <div class="container">
 
       <!-- Site logo -->
-      <a class="navbar-brand" href="/">{{ site.title }}</a>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/imgs/logo.png" />
+        {{ site.title }}
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

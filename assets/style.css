@@ -77,6 +77,8 @@ code.language-plaintext {
     text-decoration: none;
 }
 
-span.badge {
+span.badge, .keyword {
     font-family: 'Sriracha', cursive;
+    margin:2px;
+    font-size:90%;
 }
