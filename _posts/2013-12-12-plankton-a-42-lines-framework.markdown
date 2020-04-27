@@ -3,7 +3,7 @@ layout: default
 title:  "Plankton: a (pedagogical) 42-lines framework"
 permalink: /plankton-a-42-lines-framework
 date:   2013-12-12 18:00:00 +0200
-tags: php tip
+tags: php
 ---
 
 In my opinion, one of the biggest feature of PHP is that it can both be used as a template system and a programming language. However, this may be a pedagogical issue because developers may be confused and mix paradigms.
