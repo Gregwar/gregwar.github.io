@@ -10,6 +10,8 @@ Forms are doubtless one of the most important part of writing a web application,
 
 Handling a form "manually" with pure-PHP is boring and repetitive, that's why it's really important to have a good form library to rely on (more than a templating engine IMO).
 
+<!--more-->
+
 With most of the form libraries out there, the problem is that you have to learn the API to build fields. Hence, when you will render it, if you want to do something custom, it may be complex.
 
 ## So, what's new?
