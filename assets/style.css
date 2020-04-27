@@ -27,8 +27,8 @@ nav.navbar {
 div.highlight, figure.highlight {
     margin:5px;
     padding:2px;
-    border-bottom:3px solid #bbb;
-    border-left:3px solid #bbb;
+    border-bottom:3px solid #ccc;
+    border-left:3px solid #ccc;
     background-image:url('imgs/whiteShade.png');
     background-repeat: no-repeat;
     background-position: left 0;
