@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <nav class="mb-2 navbar navbar-expand-lg navbar-dark bg-dark text-light">
+    <nav class="mb-2 navbar navbar-expand-lg navbar-dark bg-primary text-light">
       <div class="container">
 
       <!-- Site logo -->
@@ -41,7 +41,7 @@
     </div>
     </nav>
 
-    <div class="container">
+    <div class="container content">
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
@@ -50,7 +50,7 @@
           <span class="text-muted">{{ page.date | date: "%d/%m/%Y" }}</span>
           
           {% for tag in page.tags %}
-            <span class="badge badge-success">#{{ tag }}</span>
+            <span class="badge badge-warning">#{{ tag }}</span>
           {% endfor %}
           
           <hr/>

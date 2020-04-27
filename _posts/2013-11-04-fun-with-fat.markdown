@@ -11,7 +11,8 @@ During the creation of the [fatcat](https://github.com/Gregwar/fatcat/) tool, I'
 Here, I will explain some of these images.
 
 <!--more-->
-## The directories loop
+
+# The directories loop
 
 In [directory-loop.img](https://github.com/Gregwar/fatcat/blob/master/docs/images/directory-loop.img.gz?raw=true), you have an infinite loop of directories.
 

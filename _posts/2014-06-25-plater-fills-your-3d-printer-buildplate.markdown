@@ -20,7 +20,7 @@ Sometime, these complex objects comes in **plated** edition, parts are then puzz
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WTK5fVQNPsI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-## Plater
+# Plater
 
 We wrote Plater in order to automate the process of plates generating for multi-parts printing. It takes a bunch of STL files with quantities and orientation, and some settings such as the plate dimension and parts spacing and tries to generate at least plates as possible containing all the given parts.
 
