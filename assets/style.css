@@ -1,6 +1,6 @@
 .content {
     font-family: 'Gentium Basic', serif;
-    font-size:19px;
+    font-size:20px;
     color:#222;
 }
 
@@ -77,12 +77,14 @@ code.language-plaintext {
     content:"# ";
     color:#fbb;
     font-family: sans;
+    font-family: 'Sriracha', cursive;
 }
 
 .page-content h2:before {
     content:"> ";
     color:#fbb;
     font-family: sans;
+    font-family: 'Sriracha', cursive;
 }
 
 .footer {
@@ -148,5 +150,21 @@ p a {
 
 figcaption {
     font-style: italic;
-    font-size:80%;
+}
+
+.quote::before {
+    content:"“";
+    color:#aaa;
+}
+
+.quote:after {
+    content:"”";
+    color:#aaa;
+    font-size:130%;
+}
+
+blockquote {
+    font-style: italic;
+    background-color:#f3f3f3;
+    border-radius:5px;
 }
