@@ -16,9 +16,9 @@
   </head>
 
   <body>
-    <nav class="mb-2 navbar navbar-expand-lg navbar-dark bg-primary text-light">
-      <div class="container container-small">
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-light">
+      <div class="container nav-container container-small">
+        
       <!-- Site logo -->
       <a class="navbar-brand" href="/">
         <img src="/assets/imgs/logo.png" />
@@ -41,7 +41,7 @@
     </div>
     </nav>
 
-    <div class="container container-small content">
+    <div class="container pt-2 container-small content body-container">
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
@@ -54,25 +54,25 @@
           {% endfor %}
           
           <hr/>
-          <div class="page-content">
+          <div class="page-content {% if page.path contains '_posts' %}page-post{% endif %}">
             {{ content }}
           </div>
         </section>
       </div>
+      <hr/>
+      <div class="container footer">
+        <a href="{{ path(site.github.owner_url) }}">
+          <img src="/assets/imgs/github.png" />
+          Gregwar
+        </a>
+        -
+        <a href="https://twitter.com/greg_war">
+          <img src="/assets/imgs/twitter.png" />
+          @greg_war
+        </a>
+      </div>
     </div>
 
-    <hr/>
-    <div class="container footer">
-      <a href="{{ path(site.github.owner_url) }}">
-        <img src="/assets/imgs/github.png" />
-        Gregwar
-      </a>
-      -
-      <a href="https://twitter.com/greg_war">
-        <img src="/assets/imgs/twitter.png" />
-        @greg_war
-      </a>
-    </div>
 
     {% if site.google_analytics %}
       <script>
