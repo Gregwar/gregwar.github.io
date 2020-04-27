@@ -1,6 +1,26 @@
-.highlight {
-    margin:2px;
+body {
+    font-family: 'Gentium Basic', serif;
+    font-size:19px;
+    color:#222;
+}
+
+div.highlight, figure.highlight {
+    margin:5px;
     padding:2px;
+    border-bottom:3px solid #bbb;
+    border-left:3px solid #bbb;
+    background-image:url('imgs/whiteShade.png?4');
+    background-repeat: no-repeat;
+    background-position: left 0;
+}
+
+pre {
+    margin-bottom:0;
+}
+
+.highlight pre {
+    overflow-wrap: normal;
+    white-space: pre-wrap;
 }
 
 h2 {
@@ -9,4 +29,54 @@ h2 {
 
 h3 {
     font-size: 120%;
+}
+
+code.language-plaintext {
+    color:#333;
+    background-color:#eee;
+    padding:2px;
+    border-radius:3px;
+    border:1px solid #aaa;
+}
+
+.page-content h1 {
+    font-size:120%;
+    margin-top:13px;
+    padding-top:13px;
+    border-top:1px dashed #bbb;
+}
+
+.page-content h2 {
+    font-size:100%;
+}
+
+.page-content h1:before {
+    content:"# ";
+    color:#fbb;
+    font-family: sans;
+}
+
+.page-content h2:before {
+    content:"> ";
+    color:#fbb;
+    font-family: sans;
+}
+
+.footer {
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.footer a {
+    color:black;
+    opacity:0.5;
+}
+
+.footer a:hover {
+    opacity:1;
+    text-decoration: none;
+}
+
+span.badge {
+    font-family: 'Sriracha', cursive;
 }

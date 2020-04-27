@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="{{ '/assets/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
     <link rel="stylesheet" href="{{ '/assets/rouge.highlight.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
     <link rel="stylesheet" href="{{ '/assets/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet"> 
 {% seo %}
   </head>
 
   <body>
-    <nav class="mb-2 navbar navbar-expand-lg navbar-dark bg-dark text-light">
+    <nav class="mb-2 navbar navbar-expand-lg navbar-dark bg-info text-light">
       <div class="container">
 
       <!-- Site logo -->
@@ -36,15 +39,34 @@
     <div class="container">
       <div class="inner clearfix">
         <section id="main-content">
-          <h2>
+          <h1>
             {{ page.title }}
-          </h2>
+          </h1>
+          <span class="text-muted">{{ page.date | date: "%d/%m/%Y" }}</span>
+          
           {% for tag in page.tags %}
-            <span class="badge badge-success">{{ tag }}</span>
+            <span class="badge badge-success">#{{ tag }}</span>
           {% endfor %}
-          {{ content }}
+          
+          <hr/>
+          <div class="page-content">
+            {{ content }}
+          </div>
         </section>
       </div>
+    </div>
+
+    <hr/>
+    <div class="container footer">
+      <a href="{{ path(site.github.owner_url) }}">
+        <img src="/assets/imgs/github.png" />
+        Gregwar
+      </a>
+      -
+      <a href="https://twitter.com/greg_war">
+        <img src="/assets/imgs/twitter.png" />
+        @greg_war
+      </a>
     </div>
 
     {% if site.google_analytics %}

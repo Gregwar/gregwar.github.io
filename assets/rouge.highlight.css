@@ -1,8 +1,10 @@
 .highlight {
     background-color:#111;
-    color:#aaa;
     border-radius:5px;
     padding:5px !important;
+}
+.highlight code {
+  color: #aaa;
 }
 
 .highlight table td { padding: 10px; }
@@ -17,7 +19,7 @@
   color: #888888;
 }
 .highlight .gp, .highlight .p {
-  color: #555555;
+  color: #777;
 }
 .highlight .gs {
 }
