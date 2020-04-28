@@ -127,7 +127,7 @@ Creating good joints is still nowadays a big issue, and potential breakthrough i
 in robotics design.
 
 Low-cost robots involve serial gears that can easily break and introduce backlash. Industrial robots relies on harmonic
-drive reduction, that is very efficient but also really rigid. This rigidity is an issue when it comes to passive or
+drive reduction, that is very efficient but also really rigid. This rigidity is not suitable when it comes to passive or
 semi-passive robots, which is natural idea when thinking of bio-inspired designs. Think about your legs when walking,
 most of the motion is actually totally mechanical (your floating leg is only actuated a little).
 
