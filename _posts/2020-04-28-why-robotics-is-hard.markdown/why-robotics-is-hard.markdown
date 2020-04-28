@@ -2,6 +2,7 @@
 layout: default
 title:  "Why robotics is hard"
 permalink: /why-robotics-is-hard
+date:   2020-04-28 18:00:00 +0200
 tags: robotics
 ---
 
