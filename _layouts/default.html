@@ -54,7 +54,7 @@
           {% endfor %}
           
           <hr/>
-          <div class="page-content {% if page.path contains '_posts' %}page-post{% endif %}">
+          <div class="page-content {% if page.path contains '_posts' or page.path contains '_draft' %}page-post{% endif %}">
             {{ content }}
           </div>
         </section>

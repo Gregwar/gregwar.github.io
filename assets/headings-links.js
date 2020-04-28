@@ -1,6 +1,6 @@
 // Thanks to
 // https://david.darn.es/2017/07/25/adding-heading-links-to-your-jekyll-blog/
-const headings = document.querySelectorAll('.page-content h1,h2,h3');
+const headings = document.querySelectorAll('.page-post h1,.page-post h2,.page-post h3');
 const linkContent = '&nbsp;🔗';
 for (const heading of headings) {
     const linkIcon = document.createElement('a');
