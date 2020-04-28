@@ -6,6 +6,8 @@ date:   2018-01-15 18:00:00 +0200
 tags: ctf teaching
 ---
 
+![Flag](/assets/imgs/flag.png){:class="float-right"}
+
 Some topics are hard to teach, security is typically one of them. I used to give some lectures about web security,
 and then do some supervised class work, but it was not very efficient.
 
