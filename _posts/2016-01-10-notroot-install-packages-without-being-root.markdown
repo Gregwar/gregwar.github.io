@@ -43,8 +43,4 @@ to some environment variables (like `$PATH`, `$LIBRARY_PATH`...) in order to mak
 
 # Links
 
-* [Notroot repository](https://github.com/gregwar/notroot)
-
-
-
-[comment]: toto
+* [Notroot repository on GitHub](https://github.com/gregwar/notroot)
