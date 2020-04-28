@@ -73,12 +73,12 @@ As teacher we have at least two roles, the first one is to help ("you can use th
 and the other one is to validate ("what you did is good/wrong").
 
 When students are working on computers, most of the validation works is actually deferred to the machine, which is
-a great luck for our image to the student. Instead of being the vilain that tells you that what you did is good or
+a great luck for our image to the students. Instead of being the vilain that tells you that what you did is good or
 bad, you are the nice guy coming and giving advises to help you solving your issues. And there is no doubt about it,
 before you came, the program was dying in a terrible error, and after you leave, everything is working fine!
 
 This doesn't mean that problems are always solved the proper way. But if there is a better way, like avoiding
-copy and paste of code snippets in favor of factoring it, there should also exists some exercises that will make it
+copying and pasting code snippets in favor of factoring it, there should also exists some exercises that will make it
 more obvious.
 
 So here is one of the dream of computer scientists, automate the "validation" part of their job to only have to focus
