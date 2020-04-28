@@ -88,7 +88,7 @@ on explaining how to solve the faced problems.
 
 ![Validation](/assets/imgs/podium.png){:class="float-right"}
 
-Competition is not a valid way to evaluate your class. The threshold mark where you estimate your students are
+Competition is not a valid way to evaluate students. The threshold mark at which you estimate your students are
 skilled enough to pass your class can be reached by all of them, or none of them, it's not a relative measure.
 
 However, competition is a very efficient way to create motivation. This is what happens in serious games for instance.
@@ -100,8 +100,8 @@ some lectures more efficients.
 ![Validation](/assets/imgs/strong.png){:class="float-right"}
 
 When you try hard on a specific topic, you understand better the pitfalls, the intuitions of a specific problem.
-Struggling yourself on something is part of learning. Thus, when you find the solution, or even when it is given to you,
-it really makes senses to you and you will don't forget that.
+Struggling *yourself* on something is part of learning. Thus, when you find the solution, or even when it is given to you,
+it really makes senses to you and you will remember.
 
 However, the above mentioned process of struggling for learning is a really long process and it is not practicable
 for everything. If you want to have a big picture, an overview of some topic, you can't stop and try hard on every
