@@ -9,11 +9,11 @@ tags: ctf teaching
 Some topics are hard to teach, security is typically one of them. I used to give some lectures about web security,
 and then do some supervised class work, but it was not very efficient.
 
+<!--more-->
+
 On the other hand, we (computer science department) organized some national competition, that lasts for 24 hours in
 a row, three times 8 hours for three challenges: programming, web and security. In the latter, I set up a capture the
 flag style competition, and since then we are also using it in pedagogical activities.
-
-<!--more-->
 
 # What is a Capture The Flag (CTF) ?
 
