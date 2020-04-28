@@ -30,7 +30,7 @@ code, getting access to some remote website (knowing the source or not), reading
 
 Around 20 challenges are good for a 4 hours session, you can see an example of dashboard (challenges list) below.
 
-![Dashboard](/assets/imgs/flagrant-challenges.png){:class="center-image"}
+![Dashboard](/assets/imgs/flagrant-challenges.png){:class="center-image img-fluid"}
 
 Those hours are very studious, entertained by a real-time competition that is available on the leaderboard, projected
 on the screen. Each time a good flag is entered, a music jingle is played and the team name and challenge displayed

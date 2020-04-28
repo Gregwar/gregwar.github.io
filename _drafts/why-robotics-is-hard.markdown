@@ -28,7 +28,7 @@ I am member of one of the teams competing in RoboCup since 2013. You can have an
 short video:
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tF0cr0PYjsk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/tF0cr0PYjsk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
 So, how fielding a team of humanoid robots playing soccer against humans is still hard while we can defeat the chess
@@ -46,7 +46,7 @@ game StarCraft II
 
 The difference in difficulty was depicted by Deepmind on the following slide during the Blizzcon 2019:
 
-![DeepMind slide](/assets/robotics/deepmind-difficulties.jpg){:class="center-image"}
+![DeepMind slide](/assets/robotics/deepmind-difficulties.jpg){:class="center-image img-fluid"}
 
 ## Action space is continuous
 
@@ -80,7 +80,7 @@ That is why we need to do *dimensions reduction*:
 ## Information is partial
 
 <figure class="float-right">
-  <img src="/assets/imgs/fog-of-war.png" width="256" />
+  <img src="/assets/imgs/fog-of-war.png" width="256" class="img-fluid" />
   <figcaption class="text-center">
     Fog of war: example<br/>
     of partial information
@@ -107,7 +107,7 @@ initial pose or the ball inertia.
 Thus, you use a probabilistic model like this one:
 
 <figure class="text-center">
-    <img src="/assets/robotics/balloons.png" />
+    <img src="/assets/robotics/balloons.png" class="img-fluid" />
     <figcaption>
         Shooting a ball can be modeled by a probability distribution
     </figcaption>
@@ -141,7 +141,7 @@ Rigid robots are less likely to adapt their environment and to cooperate with hu
 CYBO project in following video is a good example of such investigation:
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_QDkel1Tuok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/_QDkel1Tuok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
 ## Physics is a model of the world
@@ -172,7 +172,7 @@ Not to mention that with the Dunning-Kruger effect, if you are a little good in 
 of valley of despairs (i.e: by understanding better each sub-fields you also understand how much they can be improved).
 
 <figure class="text-center">
-    <img src="/assets/imgs/dunning-kruger.png" />
+    <img src="/assets/imgs/dunning-kruger.png" class="img-fluid" />
     <figcaption>
     Source:
     <a href="https://commons.wikimedia.org/wiki/File:Dunning%E2%80%93Kruger_Effect_01.svg">wikimedia</a>
@@ -216,7 +216,7 @@ handling some possible fake environments that allow you to test some piece of co
 robots themselves.
 
 <figure class="text-center">
-    <img src="/assets/robotics/sim.jpg" />
+    <img src="/assets/robotics/sim.jpg" class="img-fluid" />
     <figcaption>
         Our simulation environments for humanoid robot playing soccer
     </figcaption>
