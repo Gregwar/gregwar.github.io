@@ -195,6 +195,10 @@ expert will ask for a higher sampling rate and mechanical engineer will use ligh
 That is why to get something working you need to have a critical view on each point, but also being able to take action
 in both high-level software and low-level embedded systems whenever necessary.
 
+Don't forget the Pareto principle, 20% of our actions gets the 80% results, and 
+trying to fix an issue using the wrong approach just because we are blinded by our own field is one of the
+reasons why it is like that.
+
 ## Testing is hard
 
 When you commit code into some repository, you can expect it to be tested by your continuous integration server or
