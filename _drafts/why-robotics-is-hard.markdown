@@ -144,11 +144,17 @@ CYBO project in following video is a good example of such investigation:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_QDkel1Tuok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-## Physics is a model of the world, robotics uses models of physics
+## Physics is a model of the world
 
-We should not forget that physics itself is an experimental science, and even the best equations we use are just models
-of what we see. However, those equations are computationally expansives and in real-life application only simpler models
-can be used.
+We should not forget that physics itself is an experimental science, and even the best equations we have are just models
+of what we experience. Moreover, those equations are computationally expansives and in real-life application only simpler
+models can be used.
+
+This experimental aspect means that doing actual experiment is at the core of robotics, and benchmarks, or at least
+videos of a given robot performing tasks is also scientifically interesting.
+
+RoboCup provides one of those benchmarks, however it does it the hard way, because you are not benchmarking a specific
+task but a whole behavior (more like functional testing than unit testing).
 
 # Integrating everything together
 
