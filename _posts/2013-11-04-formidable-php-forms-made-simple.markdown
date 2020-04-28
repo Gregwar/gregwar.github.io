@@ -6,6 +6,8 @@ date:   2013-11-04 18:00:00 +0200
 tags: php forms
 ---
 
+![Flag](/assets/imgs/form.png){:class="float-right"}
+
 Forms are doubtless one of the most important part of writing a web application, because it deals with how the user interact with it.
 
 Handling a form "manually" with pure-PHP is boring and repetitive, that's why it's really important to have a good form library to rely on (more than a templating engine IMO).

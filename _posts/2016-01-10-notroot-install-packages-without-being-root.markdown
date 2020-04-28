@@ -6,6 +6,8 @@ date:   2016-01-10 18:00:00 +0200
 tags: bash system
 ---
 
+![Flag](/assets/imgs/notroot.png){:class="float-right"}
+
 Sometime, you connect to a server and a library is not installed, or maybe you are a student in an university
 and you need to install some application that would take a snap using `apt`, but there is one problem... you
 are not root!
