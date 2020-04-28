@@ -190,7 +190,7 @@ Especially in research, projects involves field-specialists. However, don't forg
 </blockquote>
 
 It is then likely that computer scientists will try to fix the problems out with machine learning, while control theory
-specialists will ask for a higher sampling rate and mechanical engineer will use lighter screws.
+expert will ask for a higher sampling rate and mechanical engineer will use lighter screws.
 
 That is why to get something working you need to have a critical view on each point, but also being able to take action
 in both high-level software and low-level embedded systems whenever necessary.
