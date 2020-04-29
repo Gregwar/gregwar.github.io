@@ -37,7 +37,7 @@ insight on the current state with this short video:
 So, how fielding a team of humanoid robots playing soccer against humans is still hard while we can defeat the chess
 grandmaster?
 
-# High dimensions
+# High dimensions and continuous space
 
 Recent breakthrough in artificial intelligence is deep reinforcement learning, which most impressive applications
 can be credited to [DeepMind](https://www.deepmind.com/) and [OpenAI](https://www.openai.com/), including:
@@ -69,14 +69,14 @@ take depending on the current state (so-called "actor").
 
 In robotics, actions and states are mostly continuous, because actually physical, like how much volt should we inject
 in a given motor? Moreover, in the low level layers, those decisions are made at high frequency (typically hundred of
-times per seconds).
+times per seconds). The state of the robot typically includes numerous degrees of freedom, possible
+backlash/flexibility/sliding (that can be seen as passive degrees of freedom). 
 
 That is why we need to do *dimensions reduction*:
 
 * Can we make decisions less often?
 * Can we use only a subset of the robot possibilities?
 * Can we split up our problem in different parts, that separately have lower dimensions?
-
 
 # Uncertain information
 
@@ -90,8 +90,8 @@ That is why we need to do *dimensions reduction*:
   </figcaption>
 </figure>
 
-The information available for a robot at a given point is only a partial view of its environment. This is because
-the environment itself is the physical world which is very complex and not all of it can be captured.
+The information available for a robot at a given point is only a partial approximate view of its environment. 
+This is because the environment itself is the physical world which is very complex and not all of it can be captured.
 
 Moreover, taking information is itself part of the decision process, think about where you decide to look at when
 discovering a new building and try to navigate.
@@ -134,6 +134,16 @@ Low-cost robots involve serial gears that can easily break and introduce backlas
 drive reduction, that is very efficient but also really rigid. This rigidity is not suitable when it comes to passive or
 semi-passive robots, which is natural idea when thinking of bio-inspired designs. Think about your legs when walking,
 most of the motion is actually totally mechanical (your floating leg is only actuated a little).
+
+For example, I built last year a robotics dog, using good quality (still hobbyist)
+[MX-64 servomotors](http://emanual.robotis.com/docs/en/dxl/mx/mx-64-2/). Using cubic splines interpolations with
+inverse kinematics model of legs, it was performing quite good on flat floor, but it is a disaster on uneven ground
+without further adaptation.
+
+![Beachdog](/assets/imgs/beachdog.png){:class="center-image img-fluid"}
+
+It is clear that a baby human learning to walk has a quite different strategy, almost throwing its legs forward
+randomly and keep balance once it reached ground.
 
 Rigid robots are less likely to adapt their environment and to cooperate with humans. With this goal in mind
 (we talk about *soft robotics*), there is different leads:
