@@ -174,4 +174,4 @@ For me, this lowers the flashing time from 25s to 3s.
 Those hacks are still some dirty workarounds allowing a huge gain of time, especially in the prototyping
 phase.
 I hope those timings will be brushed up in official versions of those tools, since I enjoy working with
-those tools.
+them.
