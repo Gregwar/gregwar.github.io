@@ -20,7 +20,7 @@ However, both building the code and loading it on the board are painfully slow. 
 on my computer with no change at all takes 15s, that I have to wait even if I just change a few minor things,
 and loading a 50K firmware on the board with default `dfu-util` takes 25s.
 
-Here, I give you some (dirty) hacks/workaround to get those two operations done in a way much acceptable time.
+Here, I give you some (dirty) hacks/workaround to get those two operations done in a much acceptable time.
 
 # Speed-up the build time (`pio run` w/ mbed)
 
