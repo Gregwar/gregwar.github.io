@@ -17,7 +17,7 @@ developing environment.
 <!--more-->
 
 However, both building the code and loading it on the board are painfully slow. Updating the build (`pio run`)
-on my computer with no change at all takes 15s, that I have to wait even if I just change a few minor things,
+on my computer takes a baseline of 15s, that I have to wait even if I just change a few minor things,
 and loading a 50K firmware on the board with default `dfu-util` takes 25s.
 
 Here, I give you some (dirty) hacks/workaround to get those two operations done in a much acceptable time.
@@ -33,7 +33,7 @@ application.
 You will find your `scons` installation, which is for me:
 `~/.platformio/packages/tool-scons/scons-local-4.0.1/SCons/Taskmaster.py`
 
-Around like 840, you will find something like this:
+Around line 840, you will find something like this:
 
 ```python
 # Around line 840
@@ -49,7 +49,7 @@ for child in chain(executor.get_all_prerequisites(), children):
 
 ## Step 2: Apply changes
 
-At the begining of the file, add:
+At the beginning of the file, add:
 
 ```python
 import os
@@ -74,7 +74,7 @@ for child in chain(executor.get_all_prerequisites(), children):
     childstate = child.get_state()
 ```
 
-What we basically do here is ignoring the files that contains `FrameworkMbed` in their path in the
+What we basically do here is ignoring the files that contains `FrameworkMbed` in their (output) path in the
 node process of `scons` itself, without removing them from the linking process.
 
 ## Step 3: When you build, decide if you want to skip mbed
