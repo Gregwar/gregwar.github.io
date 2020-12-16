@@ -111,7 +111,8 @@ For me, this lowers the build time from 15s to 2s, and stills checks and compile
 
 # Speed-up dfu-util
 
-The problem with `dfu-util` appeared to be some really conservative sleeps, while it is possible to
+The problem with `dfu-util` appeared to be some really conservative sleeps waiting for some page to be written,
+while it is possible to
 wait much less time and simply insist on the device to [get its status until it replies](https://github.com/Gregwar/dfu-util/commit/4953f7d4efae738cf00de66caac35357703beb50). I warn you that I didn't investigate a lot the topic and there might
 be some side effects / downside of this practice, but so far I didn't notice any.
 
@@ -145,7 +146,7 @@ make
 
 ### Step 4: override PlatformIO's dfu-util
 
-Again, there might be cleaner ways to do that, but you can simply copy the `dfu-util` you just built
+Again, there might be cleaner ways to do that, but you can simply copy the `dfu-util` program you just built
 over PlatformIO's one:
 
 ```
@@ -153,12 +154,12 @@ cp src/dfu-util ~/.platformio/packages/tool-dfuutil/bin/dfu-util
 ```
 
 If you want to revert this, you can simply remove the `tool-dfuutil` repository entirely, and it will be
-re-created on the next `pio run` anyway.
+re-created on the next `pio run`.
 
 ## Windows
 
 I went through the process of building an `.exe` for Windows, so I will save you some time and provide it
-to you directly, and the Windows version of this hack will be pretty straightforward:
+to you directly, and the Windows version of this hack will be pretty straightforward.
 
 Download [dfu-util.exe](/assets/dfu-util.exe) and place it next to your `platformio.ini`.
 
