@@ -22,7 +22,7 @@ and loading a 50K firmware on the board with default `dfu-util` takes 25s.
 
 Here, I give you some (dirty) hacks/workaround to get those two operations done in a way much acceptable time.
 
-# Speeding up the build time (`pio run` w/ mbed)
+# Speed-up the build time (`pio run` w/ mbed)
 
 PlatformIO relies on `scons.py` build system, which takes a lot of time scanning all the dependencies for
 updates, even in mbed itself which is actually never rebuilt since you basically only work on your own
