@@ -123,7 +123,7 @@ be some side effects / downside of this practice, but so far I didn't notice any
 We will need them to rebuild `dfu-util`:
 
 ```
-sudo apt-get install autogen make libusb-dev gcc git
+sudo apt-get install autogen make libusb-1.0.0-dev gcc git
 ```
 
 ### Step 2: clone my fork of dfu-util
@@ -154,7 +154,7 @@ cp src/dfu-util ~/.platformio/packages/tool-dfuutil/bin/dfu-util
 ```
 
 If you want to revert this, you can simply remove the `tool-dfuutil` repository entirely, and it will be
-re-created on the next `pio run`.
+re-created on the next `pio run -t upload`.
 
 ## Windows
 
