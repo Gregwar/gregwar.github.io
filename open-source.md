@@ -70,5 +70,8 @@ Here is an overview of my GitHub repositories with some description.
 * [MoveTheBox-solver](https://github.com/Gregwar/MoveTheBox-solver)
     * A simple solver for the [Move The Box](https://play.google.com/store/apps/details?id=ua.co.cts.sideup&hl=en&gl=US)
     smartphone game
+* [yet-yet-another-ricochet-solver](https://github.com/Gregwar/yet-yet-another-ricochet-robot-solver)
+    * A [Ricochet Robot](https://en.wikipedia.org/wiki/Ricochet_Robot) solver not well documented and easy to used,
+    pretty much rushed for fun
 * [ASCII-Tetris](https://github.com/Gregwar/ASCII-Tetris)
     * A very simple C ASCII Tetris game
