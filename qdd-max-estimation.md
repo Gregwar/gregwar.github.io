@@ -29,8 +29,8 @@ Knowing bounds for torque $$\tau_L < \tau < \tau_U$$, we can then compute:
 $$
 \min t_f \\
 s.t \\
-h(q, v) -J_c^T f -M(q)v_0 \frac{1}{t_f} < \tau_U \\
-\tau_L < h(q, v) -J_c^T f -M(q)v_0 \frac{1}{t_f} \\
+(h(q, v) -J_c^T f - \tau_U) t_f < M(q)v_0 \\
+M(q)v_0 < (h(q, v) -J_c^T f - \tau_L)t_f \\
 $$
 
 And then get $$\tau$$ from $$(2)$$, we can then plug it back in equation $$(1)$$, which will
