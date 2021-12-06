@@ -224,7 +224,7 @@ $$
 We can introduce another twist $$w'$$ such that $$w = R_2 w'$$. Thus:
 
 $$
-[w] = R_2 [w'] R_2^T
+[w] = R_2 [w'] R_2^T \\
 e^{[w]} = R_2 e^{[w']} R_2^T
 $$
 
