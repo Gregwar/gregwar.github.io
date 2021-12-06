@@ -207,55 +207,50 @@ $$
 
 ## Computing Jacobians
 
-Using [pinocchio](https://github.com/stack-of-tasks/pinocchio), we can compute the jacobian:
+We can compute the jacobian:
 
 $$
-J_{log_3}(R) = \frac{\partial log_3(R e^{[w]})}{\partial w}
-$$
-
-(This is what the [pin.Jlog3(R)](https://gepettoweb.laas.fr/doc/stack-of-tasks/pinocchio/master/doxygen-html/namespacepinocchio.html#a756cdb33ab783f34248c45d08aef00f4) method does.=
-
-If we want to compute the Jacobian of
-
-$$
-\frac{\partial log(R_1 e^{[w]} R_2)}{\partial w}
-$$
-
-We can introduce another twist $$w'$$ such that $$w = R_2 w'$$. Thus:
-
-$$
-[w] = R_2 [w'] R_2^T \\
-e^{[w]} = R_2 e^{[w']} R_2^T
-$$
-
-Refer to [Modern Robotics, Chapter 3.2.2](http://hades.mech.northwestern.edu/images/7/7f/MR.pdf) for details
-about this.
-
-Then, we can compute:
-
-$$
-J_{log_3}(R_1 R_2) = \frac{\partial log(R_1 R_2 e^{[w']})}{\partial w}
-$$
-
-With the chain rules, we then get:
-
-$$
-\frac{\partial log(R_1 e^{[w]} R_2)}{\partial w}
-=
-J_{log_3}(R_1 R_2) R_2^T
-$$
-
-
-$$
-\frac{\partial \epsilon_k}{\partial w_s}
-=
-J_{log_3}(e^{[w] t_k} R_k) R_k^T
-
+\frac{\partial log(R e^{[w]})}{\partial w} 
 \\
-\frac{\partial \epsilon_k}{\partial w}
-=
-J_{log_3}(e^{[w_s]} R_k) R_k^T e^{-[w_s]} t_k
+= \frac{\partial log}{\partial w}
+(R e^{[w]})
+\frac{\partial R e^{[w]}}{\partial w}
+\\
+= J_{log_3}
+(R e^{[w]})
+J_{exp_3}(w)
+$$
 
+Where $$J_{log_3}$$ and $$J_{exp_3}$$ are:
+* [pinocchio::Jlog3](https://gepettoweb.laas.fr/doc/stack-of-tasks/pinocchio/master/doxygen-html/namespacepinocchio.html#a756cdb33ab783f34248c45d08aef00f4)
+* [pinocchio::Jexp3](https://gepettoweb.laas.fr/doc/stack-of-tasks/pinocchio/master/doxygen-html/namespacepinocchio.html#a08fbc06d6caeae9c60a0412c82b87590)
+
+If we want to compute the Jacobian of:
+
+$$
+\frac{\partial log(R_1 e^{[w]} R_2)}{\partial w}
+$$
+
+We can rewrite it:
+
+$$
+\frac{\partial log(R_1 R_2 e^{[R_2^T w]})}{\partial w}
+$$
+
+Since
+
+$$
+e^{[w]} = e^{[R_2 R_2^T w]} = R_2 e^{[R_2^T w]} R_2^T
+$$
+
+
+Refer to [Modern Robotics, Chapter 3.2.2](http://hades.mech.northwestern.edu/images/7/7f/MR.pdf) for details about this.
+
+Which is then, using the chain rule:
+
+$$
+J_{log_3}(R_1 e^{[w]} R_2)
+J_{exp_3}(R_2^T w) R_2^T
 $$
 
 We can then implement this as a non-linear minimizing problem with known gradient
