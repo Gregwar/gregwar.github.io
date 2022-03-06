@@ -131,16 +131,6 @@ And:
 
 $$
 \begin{split}
-\dot T & = [S_1] \theta e^{[S_1] \theta_1} ... e^{[S_1] \theta_n} M \\
-        & + e^{[S_1] \theta_1} [S_2] \theta_2 e^{[S_2] \theta_2} ... e^{[S_1] \theta_n} M \\
-        & + ...
-\end{split}
-$$
-
-Thus:
-
-$$
-\begin{split}
 \dot {(T^{-1})} & = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1} [S_1] (-\theta_1) \\
               & + M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_2] \theta_2} [S_2] (-\theta_2) e^{-[S_1] \theta_1} \\
               + ... 
@@ -148,7 +138,7 @@ $$
 \end{split}
 $$
 
-Plugging all together, for joint $$i$$, we will get something similar to:
+Plugging all together:
 
 $$
 \begin{split}
