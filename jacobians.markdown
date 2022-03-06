@@ -248,3 +248,41 @@ T f(T)^{-1}
 
 \end{split}
 $$
+
+# Summary
+
+If we denote $$t(T) = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the following rules:
+
+## We can use a software to compute the world spatial Jacobian
+
+$$
+    t(T_{wb}(\theta)) = J_s(\theta) v
+$$
+
+## We can use decomposition
+
+$$
+    t(T_1 T_2) = t(T_1) + [Ad_{T_1}] t(T_2)
+$$
+
+## We can use inverse
+
+$$
+    t(T^{-1}) = - [Ad_{T^{-1}}] t(T)
+$$
+
+## We can apply a function
+
+$$
+    t(f(T)) = 
+    \sum_{i=1}^3
+    \sum_{j=1}^3
+    [
+    \frac{\partial f(T)}{\partial T_{i,j}}
+    t(T)_{i, j}
+    ]
+    T f(T)^{-1}
+$$
+
+
+
