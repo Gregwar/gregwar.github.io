@@ -152,7 +152,7 @@ Plugging all together, for joint $$i$$, we will get something similar to:
 
 $$
 \begin{split}
-T^{-1} T
+\dot T^{-1} T
 = &
 \sum_i
 M^{-1}
