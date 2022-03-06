@@ -132,7 +132,7 @@ And:
 $$
 \begin{split}
 \dot {(T^{-1})} & = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1} [S_1] (-\dot \theta_1) \\
-              & + M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_2] \theta_2} [S_2] (-\theta_2) e^{-[S_1] \dot \theta_1} \\
+              & + M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_2] \theta_2} [S_2] (-\dot \theta_2) e^{-[S_1] \dot \theta_1} \\
               + ... 
 
 \end{split}
