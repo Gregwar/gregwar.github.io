@@ -141,7 +141,7 @@ Thus:
 
 $$
 \begin{split}
-\dot T^{-1} & = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1} [S_1] (-\theta_1) \\
+\dot {(T^{-1})} & = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1} [S_1] (-\theta_1) \\
               & + M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_2] \theta_2} [S_2] (-\theta_2) e^{-[S_1] \theta_1} \\
               + ... 
 
@@ -152,7 +152,7 @@ Plugging all together, for joint $$i$$, we will get something similar to:
 
 $$
 \begin{split}
-\dot T^{-1} T
+\dot {(T^{-1})} T
 = &
 \sum_i
 M^{-1}
