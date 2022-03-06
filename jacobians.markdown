@@ -64,7 +64,7 @@ T(t) = T e^{[ \nu_b ] t}
 $$
 
 The adjoint map noted $$[Ad_T]$$ is the operation that changes the frame of a twist.
-Typically, we can convert space twist to body twist and vice-versa:
+Typically, we can convert spatial twist to body twist and vice-versa:
 
 $$
 \begin{split}
@@ -188,7 +188,7 @@ e^{-[B_i] \theta_i}
 - [ \nu_b ]
 \\
 = &
-- [Ad_{T^-1}] [ \nu_s ]
+- [Ad_{T^{-1}}] [ \nu_s ]
 \end{split}
 $$
 
@@ -202,7 +202,7 @@ Now, how one could compute the spatial twist of $$T_{ab}$$?
 We can combine the two previous properties by computing the spatial twist of
 $$T_{wa}^{-1} T_{wb}$$.
 
-Thus, the space twist is:
+Thus, the spatial twist is:
 
 $$
 \begin{split}
@@ -217,10 +217,10 @@ $$
 \end{split}
 $$
 
-The space twist $$\nu_s$$ of $$T_{ab}$$ can then be computed as the space twist
-$$\nu_{s_a}$$ of $$T_{wa}$$ and the space twist $$\nu_{s_b}$$ of $$T_{wb}$$. Note that
+The spatial twist $$\nu_s$$ of $$T_{ab}$$ can then be computed as the spatial twist
+$$\nu_{s_a}$$ of $$T_{wa}$$ and the spatial twist $$\nu_{s_b}$$ of $$T_{wb}$$. Note that
 $$\nu_s$$ is seen from the body $$a$$, if you want to see it from the world, you will
-have to multiply by $$[Ad_{T_{wa}}]$$, and this will simply becomes $$\nu_{s_b} - \nu_{s_a}$$.
+have to multiply by $$[Ad_{T_{wa}}]$$, and this will simply become $$\nu_{s_b} - \nu_{s_a}$$.
 
 This can be applied to Jacobians, yielding the so-called relative Jacobians.
 
