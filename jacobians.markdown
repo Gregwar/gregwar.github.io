@@ -131,8 +131,8 @@ And:
 
 $$
 \begin{split}
-\dot {(T^{-1})} & = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1} [S_1] (-\theta_1) \\
-              & + M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_2] \theta_2} [S_2] (-\theta_2) e^{-[S_1] \theta_1} \\
+\dot {(T^{-1})} & = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1} [S_1] (-\dot \theta_1) \\
+              & + M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_2] \theta_2} [S_2] (-\theta_2) e^{-[S_1] \dot \theta_1} \\
               + ... 
 
 \end{split}
@@ -149,7 +149,7 @@ M^{-1}
 e^{-[S_n] \theta_n}
 ...
 e^{-[S_i] \theta_i}
-[S_i] (-\theta_i)
+[S_i] (-\dot \theta_i)
 e^{[S_i] \theta_i}
 ...
 e^{-[S_n] \theta_n}
@@ -160,7 +160,7 @@ M
 e^{-[B_n] \theta_n}
 ...
 e^{-[B_i] \theta_i}
-[B_i] (-\theta_i)
+[B_i] (-\dot \theta_i)
 e^{[B_i] \theta_i}
 ...
 e^{-[B_n] \theta_n}
@@ -172,7 +172,7 @@ e^{-[B_n] \theta_n}
 ...
 e^{-[B_i] \theta_i}
 }]
-[B_i] (\theta_i)
+[B_i] (\dot \theta_i)
 \\
 = &
 - [ \nu_b ]
