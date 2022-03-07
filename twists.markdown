@@ -1,22 +1,21 @@
 ---
 layout: default
-title:  "Jacobians algebra"
-permalink: /jacobians-algebra
+title:  "Twists algebra"
+permalink: /twists-algebra
 date:   2022-03-05 16:00:00 +0200
-tags: jacobians algebra
+tags: twists algebra
 ---
 
-In mathematics, Jacobians are the generalization of differentiation. In robotics,
-Jacobians refer to the relation between the rate of change of a robot's joints
-to the twist of a given body.
+Twists are extensively used in mechanics, since they can represent the motion
+of a rigid body. They are also used by Jacobians to relate the the rate of change of robot's
+joint with the associated twist, and thus give a linear approximation of the robot behavior
+in a given configuration.
 
-They are powerful tools, since they can be used to solve numerically equations using
-a linear approximation. Here, I give some small algebraic tricks that can be used with those
-Jacobians.
+Here, I try to keep some cheat sheet on how they can be used.
 
 <!--more-->
 
-# Twists an Jacobians
+# Twists and Jacobians
 
 The twist of an object is a 6-Dimensional vector capturing the speed of a 3D rigid body:
 
@@ -38,14 +37,14 @@ $$
 $$
 
 If $$T$$ is the 4x4 transformation matrix of a frame, and $$\dot T$$ its rate of change
-(with respect to the time or to a degree of freedom of the robot), then the spacial
+(with respect to the time or to a degree of freedom of the robot), then the spatial
 twist is given by:
 
 $$
 [ \nu_s ] = \dot T T^{-1}
 $$
 
-If we were to integrate the motion, the spacial twist could be used with pre-multiplication:
+If we were to integrate the motion, the spatial twist could be used with pre-multiplication:
 
 $$
 T(t) = e^{[ \nu_s ] t} T
@@ -89,7 +88,7 @@ $$
 Those Jacobians are typically computed using the model of the robot and tools like
 [Pinocchio](https://github.com/stack-of-tasks/pinocchio)'s 
 [computeFrameJacobian()](https://gepettoweb.laas.fr/doc/stack-of-tasks/pinocchio/master/doxygen-html/namespacepinocchio.html#a7b1189aea93a252f4c06d9a7e3c9f5e7), using the robot's URDF.
-Using such a tools, Jacobians are easy to compute with respect to the world frame. For instance,
+Such a tool will provide you API to compute such Jacobian with respect to the world frame. For instance,
 you can compute the space or body Jacobian of $$T_{wb}$$ where $$\{w\}$$ is the world frame
 and $$\{b\}$$ is the body.
 
@@ -121,7 +120,7 @@ $$
 T = e^{[S_1] \theta_1}  ... e^{[S_1] \theta_n} M
 $$
 
-Where $$[S_i]$$ are the spacial screw axises of joints. thus:
+Where $$[S_i]$$ are the spatial screw axises of joints. thus:
 
 $$
 T^{-1} = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1}
@@ -248,6 +247,9 @@ T f(T)^{-1}
 
 \end{split}
 $$
+
+Thus, if you can compute the spatial twist of $$T$$, and differentiate $$f$$ with respect to each terms
+of the transformation matrix, you can then use this formula to obtain a new spatial twist.
 
 # Summary
 
