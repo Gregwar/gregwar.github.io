@@ -224,28 +224,26 @@ We can derive:
 $$
 \begin{split}
 \dot{(f(T))} f(T)^{-1}
-& = 
-\frac{\partial f(T)}{\partial T}
-\dot T
-T^{-1}
-T
-f(T)^{-1}
-\\
-& =
-\frac{\partial f(T)}{\partial T}
-[ \nu_s ]
-T f(T)^{-1}
-\\
 & =
 (
-\sum_{i=1}^3
-\sum_{j=1}^3
+\sum_{i=1}
+\sum_{j=1}
 [
 \frac{\partial f(T)}{\partial T_{i,j}}
-[ \nu_s ]_{i,j}
+\dot T_{i,j}
 ]
 )
-T f(T)^{-1}
+f(T)^{-1} \\
+& =
+(
+\sum_{i=1}
+\sum_{j=1}
+[
+\frac{\partial f(T)}{\partial T_{i,j}}
+([\nu_s] T)_{i,j}
+]
+)
+f(T)^{-1}
 
 \end{split}
 $$
@@ -283,10 +281,10 @@ $$
     \sum_{j=1}^3
     [
     \frac{\partial f(T)}{\partial T_{i,j}}
-    t(T)_{i, j}
+    (t(T) T)_{i, j}
     ]
     )
-    T f(T)^{-1}
+    f(T)^{-1}
 $$
 
 
