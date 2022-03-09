@@ -226,8 +226,8 @@ $$
 \dot{(f(T))} f(T)^{-1}
 & =
 (
-\sum_{i=1}
-\sum_{j=1}
+\sum_{i}
+\sum_{j}
 [
 \frac{\partial f(T)}{\partial T_{i,j}}
 \dot T_{i,j}
@@ -277,8 +277,8 @@ $$
 
 $$
     t(f(T)) = 
-    (\sum_{i=1}^3
-    \sum_{j=1}^3
+    (\sum_{i}
+    \sum_{j}
     [
     \frac{\partial f(T)}{\partial T_{i,j}}
     (t(T) T)_{i, j}
