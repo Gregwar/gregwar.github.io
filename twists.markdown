@@ -246,10 +246,15 @@ f(T)^{-1} \\
 f(T)^{-1}
 
 \end{split}
+\space \space \space \space (1)
 $$
 
-Thus, if you can compute the spatial twist of $$T$$, and differentiate $$f$$ with respect to each terms
-of the transformation matrix, you can then use this formula to obtain a new spatial twist.
+Thus, if you have the function $$f$$, and you are able to differentiate it with respect to every coefficient in the
+original matrix, you can then transform a twist of $$T$$ into a twist of $$f(T)$$ using this equation (which is
+basically the chain rule).
+
+If you can compute the spatial Jacobian of $$T$$, remember that for each column $$[\nu_s] = [J_c] \dot \theta_c$$.
+Substituting the twist of each column into equation 1 will then give you columns of the spatial Jacobian of $$f(T)$$.
 
 # Summary
 
