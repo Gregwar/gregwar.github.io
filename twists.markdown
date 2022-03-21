@@ -62,7 +62,8 @@ $$
 T(t) = T e^{[ \nu_b ] t}
 $$
 
-The adjoint map noted $$[Ad_T]$$ is the operation that changes the frame of a twist.
+The adjoint representation noted $$Ad_T$$ is the operation that changes the frame of a twist.
+This can be performed by multiplying by a 6x6 matrix that we denote $$[Ad_T]$$.
 Typically, we can convert spatial twist to body twist and vice-versa:
 
 $$
