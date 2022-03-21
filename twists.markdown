@@ -67,8 +67,8 @@ Typically, we can convert spatial twist to body twist and vice-versa:
 
 $$
 \begin{split}
-\nu_s = [Ad_{T_{sb}}] [\nu_b] \\
-\nu_b = [Ad_{T_{bs}}] [\nu_s] \\
+\nu_s = [Ad_{T_{sb}}] \nu_b \\
+\nu_b = [Ad_{T_{bs}}] \nu_s \\
 \end{split}
 $$
 
@@ -103,9 +103,9 @@ What is the spatial twist of $$T_1 T_2$$?
 $$
 \begin{split}
 \dot {(T_1 T_2)} ({T_1 T_2})^{-1}
-& = \dot T_1 T_2 T_2^{-1} T_1^{-1} + T_1 \dot T_2 T_2^{-1} T_1^{-1}\\
-& = \dot T_1 T_1^{-1} + [Ad_{T_1}] \dot T_2 T_2^{-1} \\
-& = [ \nu_{s_1} ] + [Ad_{T_1}] [ \nu_{s_2} ]
+& = \dot T_1 T_2 T_2^{-1} T_1^{-1} + T_1 \dot T_2 T_2^{-1} T_1^{-1} \\
+& = [ \nu_{s_1} ] + T_1 [ \nu_{s_2} ] T_1^{-1} \\
+& = [ \nu_{s_1} ] + [ Ad_{T_1}(\nu_{s_2}) ]
 \end{split}
 $$
 
@@ -177,7 +177,7 @@ e^{-[B_i] \theta_i}
 - [ \nu_b ]
 \\
 = &
-- [Ad_{T^{-1}}] [ \nu_s ]
+- [Ad_{T^{-1}}(\nu_s) ]
 \end{split}
 $$
 
@@ -197,12 +197,12 @@ $$
 \begin{split}
 [ \nu_s ] 
 = &
-- [Ad_{T_{wa}^{-1}}] [ \nu_{s_a} ]
+- [Ad_{T_{wa}^{-1}}( \nu_{s_a} ) ]
 +
-[Ad_{T_{wa}^{-1}}] [ \nu_{s_b} ]
+[Ad_{T_{wa}^{-1}}( \nu_{s_b} ) ]
 \\
 = &
-[Ad_{T_{wa}^{-1}}] [ \nu_{s_b} - \nu_{s_a} ]
+[Ad_{T_{wa}^{-1}}( \nu_{s_b} - \nu_{s_a} ) ]
 \end{split}
 $$
 
@@ -258,7 +258,7 @@ Substituting the twist of each column into equation 1 will then give you columns
 
 # Summary
 
-If we denote $$t(T) = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the following rules:
+If we denote $$[t(T)] = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the following rules:
 
 ## We can use a software to compute the world spatial Jacobian
 
@@ -281,7 +281,7 @@ $$
 ## We can apply a function
 
 $$
-    t(f(T)) = 
+    [t(f(T))] = 
     (\sum_{i}
     \sum_{j}
     [
