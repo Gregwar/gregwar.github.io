@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Twists cookbook"
-permalink: /twists-algebra
+permalink: /twists
 date:   2022-03-05 16:00:00 +0200
 tags: twists algebra
 ---
@@ -266,7 +266,7 @@ produce the Jacobian of a twist happenning between those two bodies; this is the
 
 # Summary
 
-If we denote $$[t(T)] = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the following rules:
+If we denote $$t$$ a "twist" operator $$[t(T)] = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the following rules:
 
 ## We can use a software to compute the world spatial Jacobian
 
@@ -301,4 +301,5 @@ $$
 $$
 
 
-
+By chaining all those operations, one can start with an equation involving frames, and derive the resulting
+twist (or Jacobian).
