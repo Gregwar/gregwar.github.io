@@ -10,10 +10,10 @@ tags: robotics humanoid torques gravity
     <img src="/assets/humanoid-g.png" width="150" />
 </figure>
 
-As opposed to robotics arms, humanoid robots are mobile and therefore contact points with the
+As opposed to robotic arms, humanoid robots are mobile and therefore contact points with the
 environments should be accounted for when computing their dynamics.
 
-Here, we derive a way to compute the required torque on an humanoid robot standing on either one
+Here, we derive a way to compute the required torque on a humanoid robot standing on either one
 or two legs to sustain the gravity.
 
 
@@ -40,12 +40,12 @@ If we want no acceleration $$\dot v = 0$$, and we ignore other non linear effect
 
 $$\tau = g(q)$$
 
-Thus, for any "static" robot like a robotic arm anchored on the ground, we can simply stop here.
+Thus, for any "static" robot like a robotic arm anchored to the ground, we can simply stop here.
 The generalized gravity is indeed directly the torques we need to compensate gravity.
 
 # Floating base
 
-Now, what if we have a mobile robot, like an humanoid? The thing is that we need to represent the fact
+Now, what if we have a mobile robot, like a humanoid? The thing is that we need to represent the fact
 that the robot is moving in the world. This is typically achieved by adding a *floating base*.
 
 The *floating base* is a set of 6 extra degrees of freedom added at the beginning of the kinematics
