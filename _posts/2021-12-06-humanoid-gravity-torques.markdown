@@ -126,7 +126,8 @@ g(q)
 J_l^T f_l
 $$
 
-Where $$J_l$$ is the Jacobian of the left foot and $$f_l$$ the force applied on the left foot.
+Where $$J_l$$ is the Jacobian of the left foot and $$f_l$$ the wrench (a 6D vector packaging the forces and the
+moments) applied on the left foot.
 
 We can split this equation in two parts:
 
@@ -324,3 +325,4 @@ Programming](https://en.wikipedia.org/wiki/Quadratic_programming).
 There are many advantages of doing so; since you can also add some inequality constraints, limiting the torque
 and forces to feasible ranges.
 
+Thanks to [Stéphane Caron](https://scaron.info/) for proof-reading, comments and typos feedbacks.
