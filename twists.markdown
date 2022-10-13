@@ -47,7 +47,7 @@ $$
 If we were to integrate the motion, the spatial twist could be used with pre-multiplication:
 
 $$
-T(t) = e^{[ \nu_s ] t} T
+T(t) = e^{[ \nu_s ] t} T(0)
 $$
 
 Similarly, the body twist is defined by:
@@ -59,7 +59,7 @@ $$
 That could be integrated by post-multiplication:
 
 $$
-T(t) = T e^{[ \nu_b ] t}
+T(t) = T(0) e^{[ \nu_b ] t}
 $$
 
 The adjoint representation noted $$Ad_T$$ is the operation that changes the frame of a twist.
@@ -85,6 +85,9 @@ $$
 \nu_b = J_b (\theta) v
 \end{split}
 $$
+
+Here, $$v$$ denotes the speed of the degrees of freedom. They are not denoted $$\dot \theta$$ because they don't
+necessary live in the same representation.
 
 Those Jacobians are typically computed using the model of the robot and tools like
 [Pinocchio](https://github.com/stack-of-tasks/pinocchio)'s 
@@ -190,7 +193,7 @@ very similar to the one from te body Jacobian (see [Chapter 5.1.2 in Modern Robo
 Now, how one could compute the spatial twist of $$T_{ab}$$?
 
 We can combine the two previous properties by computing the spatial twist of
-$$T_{wa}^{-1} T_{wb}$$.
+$$T_{sa}^{-1} T_{sb}$$.
 
 Thus, the spatial twist is:
 
@@ -198,27 +201,26 @@ $$
 \begin{split}
 [ \nu_s ] 
 = &
-- [Ad_{T_{wa}^{-1}}( \nu_{s_a} ) ]
+- [Ad_{T_{sa}^{-1}}( \nu_{s_a} ) ]
 +
-[Ad_{T_{wa}^{-1}}( \nu_{s_b} ) ]
+[Ad_{T_{sa}^{-1}}( \nu_{s_b} ) ]
 \\
 = &
-[Ad_{T_{wa}^{-1}}( \nu_{s_b} - \nu_{s_a} ) ]
+[Ad_{T_{sa}^{-1}}( \nu_{s_b} - \nu_{s_a} ) ]
 \end{split}
 $$
 
 The spatial twist $$\nu_s$$ of $$T_{ab}$$ can then be computed as the spatial twist
-$$\nu_{s_a}$$ of $$T_{wa}$$ and the spatial twist $$\nu_{s_b}$$ of $$T_{wb}$$. Note that
+$$\nu_{s_a}$$ of $$T_{sa}$$ and the spatial twist $$\nu_{s_b}$$ of $$T_{sb}$$. Note that
 $$\nu_s$$ is seen from the body $$a$$, if you want to see it from the world, you will
-have to multiply by $$[Ad_{T_{wa}}]$$, and this will simply become $$\nu_{s_b} - \nu_{s_a}$$.
-
-This can be applied to Jacobians, yielding the so-called relative Jacobians.
+have to multiply by $$[Ad_{T_{sa}}]$$, and this will simply become $$\nu_{s_b} - \nu_{s_a}$$.
 
 <!-- TODO: Mention the calculation using floating base -->
 
 # Twist of a function
 
-What is the spatial twist of $$f(T)$$ for an arbitrary differentiable function $$f$$?
+What is the spatial twist of $$f(T)$$ for an arbitrary differentiable function $$f$$ (which input is a transformation
+matrix and output another transformation matrix)?
 
 We can derive:
 
@@ -230,7 +232,7 @@ $$
 \sum_{i}
 \sum_{j}
 [
-\frac{\partial f(T)}{\partial T_{i,j}}
+\frac{d f(T)}{d T_{i,j}}
 \dot T_{i,j}
 ]
 )
@@ -240,7 +242,7 @@ f(T)^{-1} \\
 \sum_{i=1}
 \sum_{j=1}
 [
-\frac{\partial f(T)}{\partial T_{i,j}}
+\frac{d f(T)}{d T_{i,j}}
 ([\nu_s] T)_{i,j}
 ]
 )
@@ -254,8 +256,9 @@ Thus, if you have the function $$f$$, and you are able to differentiate it with 
 original matrix, you can then transform a twist of $$T$$ into a twist of $$f(T)$$ using this equation (which is
 basically the chain rule).
 
-If you can compute the spatial Jacobian of $$T$$, remember that for each column $$[\nu_s] = [J_c] \dot \theta_c$$.
-Substituting the twist of each column into equation 1 will then give you columns of the spatial Jacobian of $$f(T)$$.
+# About Jacobians
+
+The columns of a jacobian matrix can be interpreted ...
 
 # Summary
 
