@@ -271,7 +271,7 @@ If we denote $$[t(T)] = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the fo
 ## We can use a software to compute the world spatial Jacobian
 
 $$
-    t(T_{wb}(\theta)) = J_s(\theta) v
+    t(T_{sb}(\theta)) = J_s(\theta) v
 $$
 
 ## We can use decomposition
