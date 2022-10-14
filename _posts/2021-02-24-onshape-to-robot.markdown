@@ -36,6 +36,6 @@ Onshape, a fully-online CAD designing tools, offers a convenients API, that allo
 ## Links
 
 * [Onshape to robot documentation](https://onshape-to-robot.readthedocs.io/en/latest/)
-* [GitHub repository](github.com/rhoban/onshape-to-robot)
-* [Robot examples](github.com/rhoban/onshape-to-robot-examples)
+* [GitHub repository](https://github.com/rhoban/onshape-to-robot)
+* [Robot examples](https://github.com/rhoban/onshape-to-robot-examples)
 * [Thanks Hackaday for this article](https://hackaday.com/2021/02/28/onshape-to-robot-models-made-easier/)

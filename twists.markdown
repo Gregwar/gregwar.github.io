@@ -1,7 +1,7 @@
 ---
 layout: default
-title:  "Twists algebra"
-permalink: /twists-algebra
+title:  "Twists cookbook"
+permalink: /twists
 date:   2022-03-05 16:00:00 +0200
 tags: twists algebra
 ---
@@ -11,7 +11,7 @@ of a rigid body. They are also used by Jacobians to relate the the rate of chang
 joint with the associated twist, and thus give a linear approximation of the robot behavior
 in a given configuration.
 
-Here, I try to keep some cheat sheet on how they can be used.
+Here, I try to keep some useful recipes for derivations involving twists.
 
 <!--more-->
 
@@ -258,16 +258,20 @@ basically the chain rule).
 
 # About Jacobians
 
-The columns of a jacobian matrix can be interpreted ...
+Remember that the columns of an effector Jacobian matrix are actually twists. Those, all the algebra detailled
+here is also useable to deal with Jacobian.
+
+In particular, the relative twists implies that the difference between the spatial Jacobian of two bodies will
+produce the Jacobian of a twist happenning between those two bodies; this is the so-called *relative Jacobian*.
 
 # Summary
 
-If we denote $$[t(T)] = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the following rules:
+If we denote $$t$$ a "twist" operator $$[t(T)] = \dot T T^{-1} = [\nu_{s_T}]$$, we can then derive the following rules:
 
 ## We can use a software to compute the world spatial Jacobian
 
 $$
-    t(T_{wb}(\theta)) = J_s(\theta) v
+    t(T_{sb}(\theta)) = J_s(\theta) v
 $$
 
 ## We can use decomposition
@@ -297,4 +301,5 @@ $$
 $$
 
 
-
+By chaining all those operations, one can start with an equation involving frames, and derive the resulting
+twist (or Jacobian).
