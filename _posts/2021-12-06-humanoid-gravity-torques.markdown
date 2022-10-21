@@ -313,10 +313,125 @@ C & -E
 (F-D)
 $$
 
+# It is not over
+
+It seems that we now have a solution to the initial problem. However, we forgot a strong assumption: the contact
+forces are *unilateral*. This means that we can't "pull" on the ground for example.
+
+The solution to the single support foot equation is unique, thus we can check if it is feasible but there are no
+other torques we could apply else. However, the solution with two supports is underconstrained and admits
+an infinite set of solutions.
+
+What we want it to explore those solutions, and select the one that minimize torques **subject to** some constraints
+on the force (in that case, $$f_z > 0$$, if $$f_z$$ is upward).
+
+To achieve this, we can formulate the problem as a *Quadratic Programming* problem, and give it to a solver that
+will find the best solution for us. Such a solver can address problems of the form:
+
+$$
+min \space \frac{1}{2} x^T P x + c^T x \\
+subject \space to:  \\
+A x = b \\
+G x \leq h 
+$$
+
+Let's consider the double support problem here. As you will see, this formulation can also be easily extended to
+any number of contact forces.
+
+## QP variables
+
+The QP variables that we will use are:
+
+$$
+x = \begin{bmatrix} \tau_a & f_l & f_r  \end{bmatrix} ^T
+$$
+
+Where $$\tau_a$$ is the robot torques, and where $$f_l$$ and $$f_r$$ the contact forces.
+
+## Score function
+
+To define our score function, we will choose $$c$$ to be 0, and $$P$$ to be a diagonal matrix, with $$1$$ on the
+diagonal for values that correspond to an actuated torque, and $$\epsilon$$ for unactuated torques and contact forces.
+
+If you think about it, with this $$P$$, the resulting score will be the sum of the (squared) torques, plus
+the sum of the (squared) forces times $$\epsilon$$. This means that the main priority is to find the solution
+with the minimum torques, and the second (with a very small weight) priority to minimize the forces.
+
+This trick is required since the forces are part of our optimization variables dans the *QP solver* needs a score
+to be minimized for all those variables.
+
+## Equality constraint
+
+The equality constraint is the one we've been dealing with the whole time:
+
+$$
+\underbrace{
+\begin{bmatrix}
+S & J_l^T & J_r^T
+\end{bmatrix}
+}_A
+\begin{bmatrix}
+\tau \\
+f_l \\
+f_r 
+\end{bmatrix}
+=
+\underbrace{
+g
+}_b
+$$
+
+Here, $$S$$ is a *selection matrix*, that is basically the identity with zeroes for the unactuated torques.
+
+## Inequality constraint
+
+The problem we formulated so far is already useable with QP, and does exactly the same as what was explained in detail
+in the previous section, but in a cleanier way.
+
+We can now take advantage of the QP real advantage: the inequality constraint, to ensure that our contacts are
+unilateral:
+
+$$
+f_{l_z} \geq 0 \\
+f_{r_z} \geq 0
+$$
+
+Those constraints can be set by adding two rows in $$G$$ and $$h$$.
+
+$$
+\underbrace{
+\begin{bmatrix}
+0 &... & -1 & ... & 0 & ... & -1 & ... & 1
+\end{bmatrix}
+}_G
+\begin{bmatrix}
+... \\
+f_{l_z} \\
+... \\
+f_{r_z} \\
+...
+\end{bmatrix}
+\leq
+\underbrace{
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+}_h
+$$
+
+## In practice
+
+In practice, you can consider using:
+
+* Python: [qpsolvers](https://pypi.org/project/qpsolvers/)
+* C++: [Eiquadprog](https://github.com/stack-of-tasks/eiquadprog)
+
+But there are many other implementations and libraries out there!
+
 # More generally
 
-You can solve those problems more generally and systematically by formulating all this
-in a constrained optimization problem.
+Solving tasks-space problem with dynamics using QP solvers is extensively studied in robotics.
 
 This is what is achieved in solvers like [TSID (Task-Space Inverse Dynamics)](https://github.com/stack-of-tasks/tsid).
 In such setup, you minimize a score function subject to equation $$(2)$$, using some solver like [Quadratic
