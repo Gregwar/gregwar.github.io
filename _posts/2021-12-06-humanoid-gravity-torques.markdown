@@ -282,7 +282,7 @@ f_r
 -
 (J_r^T)_r^{-1}
 }_E
-\tau_l
+\tau_r
 +
 \underbrace{
 (J_r^T)_r^{-1}
