@@ -323,10 +323,10 @@ other torques we could apply else. However, the solution with two supports is un
 an infinite set of solutions.
 
 What we want it to explore those solutions, and select the one that minimize torques **subject to** some constraints
-on the force (in that case, $$f_z > 0$$, if $$f_z$$ is upward).
+on the force (in that case, $$f_z > 0$$, if $$f_z$$ is expressed in proper frame).
 
-To achieve this, we can formulate the problem as a *Quadratic Programming* problem, and give it to a solver that
-will find the best solution for us. Such a solver can address problems of the form:
+To achieve this, we can formulate the problem as a *Quadratic Programming* problem and invoke a solver.
+Such a solver can address problems of the form:
 
 $$
 min \space \frac{1}{2} x^T P x + c^T x \\
@@ -351,7 +351,7 @@ Where $$\tau_a$$ is the robot torques, and where $$f_l$$ and $$f_r$$ the contact
 ## Score function
 
 To define our score function, we will choose $$c$$ to be 0, and $$P$$ to be a diagonal matrix, with $$1$$ on the
-diagonal for values that correspond to an actuated torque, and $$\epsilon$$ for unactuated torques and contact forces.
+diagonal for values that correspond to an actuated torque, and $$\epsilon$$ for contact forces.
 
 If you think about it, with this $$P$$, the resulting score will be the sum of the (squared) torques, plus
 the sum of the (squared) forces times $$\epsilon$$. This means that the main priority is to find the solution
@@ -367,7 +367,8 @@ The equality constraint is the one we've been dealing with the whole time:
 $$
 \underbrace{
 \begin{bmatrix}
-S & J_l^T & J_r^T
+0 & (J_l^T)_u & (J_r^T)_u \\
+I & (J_l^T)_a & (J_r^T)_a
 \end{bmatrix}
 }_A
 \begin{bmatrix}
@@ -381,7 +382,7 @@ g
 }_b
 $$
 
-Here, $$S$$ is a *selection matrix*, that is basically the identity with zeroes for the unactuated torques.
+Here, again, $$u$$ and $$a$$ subscript reffers to unactuated and actuated parts of the jacobian.
 
 ## Inequality constraint
 
@@ -401,7 +402,8 @@ Those constraints can be set by adding two rows in $$G$$ and $$h$$.
 $$
 \underbrace{
 \begin{bmatrix}
-0 &... & -1 & ... & 0 & ... & -1 & ... & 1
+...0... & -1 & ...0... & 0 & ...0... \\
+...0... & 0 & ...0... & -1 & ...0...
 \end{bmatrix}
 }_G
 \begin{bmatrix}
