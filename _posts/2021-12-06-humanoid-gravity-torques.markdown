@@ -322,7 +322,7 @@ The solution to the single support foot equation is unique, thus we can check if
 other torques we could apply else. However, the solution with two supports is underconstrained and admits
 an infinite set of solutions.
 
-What we want it to explore those solutions, and select the one that minimize torques **subject to** some constraints
+What we want it to explore those solutions, and select the one that minimizes torques **subject to** some constraints
 on the force (in that case, $$f_z > 0$$, if $$f_z$$ is expressed in proper frame).
 
 To achieve this, we can formulate the problem as a *Quadratic Programming* problem and invoke a solver.
@@ -355,7 +355,7 @@ diagonal for values that correspond to an actuated torque, and $$\epsilon$$ for 
 
 If you think about it, with this $$P$$, the resulting score will be the sum of the (squared) torques, plus
 the sum of the (squared) forces times $$\epsilon$$. This means that the main priority is to find the solution
-with the minimum torques, and the second (with a very small weight) priority to minimize the forces.
+with the minimum torques, and the second priority (with a very small weight) priority to minimize the forces.
 
 This trick is required since the forces are part of our optimization variables dans the *QP solver* needs a score
 to be minimized for all those variables.
