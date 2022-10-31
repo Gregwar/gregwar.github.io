@@ -11,11 +11,10 @@ tags: robotics humanoid torques gravity
 </figure>
 
 As opposed to robotic arms, humanoid robots are mobile and therefore contact points with the
-environments should be accounted for when computing their dynamics.
+environment should be accounted for when computing their dynamics.
 
 Here, we derive a way to compute the required torque on a humanoid robot standing on either one
-or two legs to sustain the gravity.
-
+or two legs to sustain gravity.
 
 <!--more-->
 
@@ -36,12 +35,12 @@ Where:
 * $$g(q)$$ is the generalized gravity,
 * $$\tau$$ are the degrees of freedom torque.
 
-If we want no acceleration $$\dot v = 0$$, and we ignore other non linear effects ($$h$$):
+If we want no acceleration $$\dot v = 0$$, and we ignore other non linear effects ($$h$$), we get:
 
 $$\tau = g(q)$$
 
 Thus, for any "static" robot like a robotic arm anchored to the ground, we can simply stop here.
-The generalized gravity is indeed directly the torques we need to compensate gravity.
+The generalized gravity is indeed directly the joint torques we need to compensate gravity.
 
 # Floating base
 
@@ -59,7 +58,7 @@ As an illustration, imagine an humanoid robot attached to an invisible robotic a
 the ground. (This is just a mental visualization; the floating base is of course not constrained to
 the singluarities and the workspace of a robotic arm).
 
-The equation $$(1)$$ now becomes:
+Equation $$(1)$$ now becomes:
 
 $$
 M(q) \dot v + g(q) + h(q, v) =
@@ -69,13 +68,13 @@ M(q) \dot v + g(q) + h(q, v) =
 \end{bmatrix}
 $$
 
-Where $$0_6$$ is the dimension-$$6$$ vector of null torques in the floating base. Subject to gravity, the only way
+Where $$0_6$$ is the dimension-$$6$$ vector of zero torques in the floating base. Subject to gravity, the only way
 to balance this equation is to include some acceleration on the floating base: the robot is "falling" and there is no
 way to prevent that because our current model doesn't includes contact forces.
 
 # Contact forces
 
-Contact forces act on the robot through the transpose of the Jacobian of contact frame. For more information
+Contact forces act on the robot through the transpose of the contact frame Jacobian. For more information
 see [Modern Robotics, chapter 5.2](http://hades.mech.northwestern.edu/images/7/7f/MR.pdf).
 
 Those additional terms can be added to equation $$(1)$$, which is now:
@@ -95,7 +94,7 @@ J_i^T f_i
 \space \space (2)
 $$
 
-Again, supposing we want no acceleration and neglecting other non linear effects than gravity, our equation
+Again, assuming we want no acceleration and neglecting other non linear effects than gravity, our equation
 becomes:
 
 $$
@@ -126,7 +125,7 @@ g(q)
 J_l^T f_l
 $$
 
-Where $$J_l$$ is the Jacobian of the left foot and $$f_l$$ the wrench (a 6D vector packaging the forces and the
+Where $$J_l$$ is the Jacobian of the left foot and $$f_l$$ the wrench (a 6D vector packaging the forces and their
 moments) applied on the left foot.
 
 We can split this equation in two parts:
@@ -139,7 +138,7 @@ g_a(q) = \tau + (J_l^T)_a f_l
 \end{cases}
 $$
 
-Here, the underscript $$u$$ and $$a$$ denotes respectively the unactuated and actuated parts of the gravity
+Here, the subscripts $$u$$ and $$a$$ denote respectively the unactuated and actuated parts of the gravity
 and Jacobian.
 
 Since $$(J_l^T)_u$$ is the Jacobian of an universal floating base, it can always be inverted, and:
@@ -175,7 +174,7 @@ J_r^T f_r
 $$
 
 With $$J_l$$ and $$J_r$$ being respectively the Jacobian of the left and right foot, and $$f_l$$ and
-$$f_r$$ respectively the contact forces on left and right foot.
+$$f_r$$ respectively the contact wrenches on the left and right foot.
 
 We can do the same split as previously, but separating also equations for left and right legs:
 
@@ -189,11 +188,11 @@ g_r(q) = \tau_l + \underbrace{(J_l^T)_r}_0 f_l + (J_r^T)_r f_r  \space \space (6
 \end{cases}
 $$
 
-Because of the kinematics structure of the robot, we know that $$(J_r^T)_l$$ and $$(J_l^T)_r$$ are null
+Because of the kinematics structure of the robot, we know that $$(J_r^T)_l$$ and $$(J_l^T)_r$$ are zero
 (because left and right legs are different branches in the kinematics tree).
 
-Here, we can't solve the contact forces using the first equation, because the system is under-constrained.
-Indeed, forces are 12 degrees of freedom while we only have 6 equations.
+Here, we can't solve contact forces using the first equation, because the system is under-constrained.
+Indeed, forces have 12 degrees of freedom while we only have 6 equations.
 
 ## Minimizing contact forces
 
@@ -315,21 +314,21 @@ $$
 
 # It is not over
 
-It seems that we now have a solution to the initial problem. However, we forgot a strong assumption: the contact
+It seems that we now have a solution to the initial problem. However, we forgot a strong assumption: contact
 forces are *unilateral*. This means that we can't "pull" on the ground for example.
 
-The solution to the single support foot equation is unique, thus we can check if it is feasible but there are no
-other torques we could apply else. However, the solution with two supports is underconstrained and admits
+The solution to the single support foot equation is unique, thus, while we can check if it is feasible, there are no
+other torques we could apply. However, the solution with two support feet is under-constrained and admits
 an infinite set of solutions.
 
-What we want it to explore those solutions, and select the one that minimizes torques **subject to** some constraints
+What we want is to explore those solutions, and select the one that minimizes torques **subject to** some constraints
 on the force (in that case, $$f_z > 0$$, if $$f_z$$ is expressed in proper frame).
 
-To achieve this, we can formulate the problem as a *Quadratic Programming* problem and invoke a solver.
+To achieve this, we can formulate the problem as a *quadratic programming* (QP) problem and invoke a solver.
 Such a solver can address problems of the form:
 
 $$
-min \space \frac{1}{2} x^T P x + c^T x \\
+min_x \space \frac{1}{2} x^T P x + c^T x \\
 subject \space to:  \\
 A x = b \\
 G x \leq h 
@@ -338,9 +337,9 @@ $$
 Let's consider the double support problem here. As you will see, this formulation can also be easily extended to
 any number of contact forces.
 
-## QP variables
+## Optimization variables
 
-The QP variables that we will use are:
+The optimization variables that we will use are:
 
 $$
 x = \begin{bmatrix} \tau_a & f_l & f_r  \end{bmatrix} ^T
@@ -348,14 +347,14 @@ $$
 
 Where $$\tau_a$$ is the robot torques, and where $$f_l$$ and $$f_r$$ the contact forces.
 
-## Score function
+## Objective function
 
 To define our score function, we will choose $$c$$ to be 0, and $$P$$ to be a diagonal matrix, with $$1$$ on the
 diagonal for values that correspond to an actuated torque, and $$\epsilon$$ for contact forces.
 
 If you think about it, with this $$P$$, the resulting score will be the sum of the (squared) torques, plus
 the sum of the (squared) forces times $$\epsilon$$. This means that the main priority is to find the solution
-with the minimum torques, and the second priority (with a very small weight) priority to minimize the forces.
+with the minimum torques, and the second priority (with a very small weight) is to minimize contact forces.
 
 This trick is required since the forces are part of our optimization variables dans the *QP solver* needs a score
 to be minimized for all those variables.
@@ -386,10 +385,10 @@ Here, again, $$u$$ and $$a$$ subscript reffers to unactuated and actuated parts 
 
 ## Inequality constraint
 
-The problem we formulated so far is already useable with QP, and does exactly the same as what was explained in detail
-in the previous section, but in a cleanier way.
+The problem we formulated so far is already a quadratic program, and does exactly what was explained in detail
+in the previous section, but in a cleaner way.
 
-We can now take advantage of the QP real advantage: the inequality constraint, to ensure that our contacts are
+We can now take advantage of quadratic programming's real advantage, inequality constraints, to ensure that our contacts are
 unilateral:
 
 $$
@@ -438,8 +437,5 @@ Solving tasks-space problem with dynamics using QP solvers is extensively studie
 This is what is achieved in solvers like [TSID (Task-Space Inverse Dynamics)](https://github.com/stack-of-tasks/tsid).
 In such setup, you minimize a score function subject to equation $$(2)$$, using some solver like [Quadratic
 Programming](https://en.wikipedia.org/wiki/Quadratic_programming).
-
-There are many advantages of doing so; since you can also add some inequality constraints, limiting the torque
-and forces to feasible ranges.
 
 Thanks to [Stéphane Caron](https://scaron.info/) for proof-reading, comments and typos feedbacks.
