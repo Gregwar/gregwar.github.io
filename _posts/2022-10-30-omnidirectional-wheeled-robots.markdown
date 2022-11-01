@@ -298,6 +298,9 @@ As you can notice, the robot speed capabilities are not the same in all the dire
 
 # See also / references
 
+You can find here a [link to the script](https://github.com/Gregwar/omniwheel-robot-speeds/blob/main/speeds.py)
+I used to produce the above plots of the robot speed feasible regions.
+
 Kinematics, dynamics and parameters identification of omni-directional robots with 3 and 4 wheels was detailed by 
 *Oliveira, Hélder P., et al.* (from a RoboCup SSL team) in the following paper:
 [Dynamical Models for Omni-directional Robots with 3 and 4 Wheels.](https://www.researchgate.net/publication/256089847_Dynamical_Models_for_Omni-directional_Robots_with_3_and_4_Wheels)
