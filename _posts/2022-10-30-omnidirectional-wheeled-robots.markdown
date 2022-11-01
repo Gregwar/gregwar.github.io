@@ -234,9 +234,19 @@ $$
 
 # Speed limits
 
-- Rescale de la vitesse
+Now, how do we handle the fact that the wheel speeds are physically limited by the motors we are using?
+If we do nothing about that, increasing the target speed $$s$$ will first saturate the speed of one motor
+(say $$w_1$$), and the speed of other motors will continue tu rise, getting the robot to move in a different
+direction than the one desired.
 
-# Polytopes
+Another approach would be to "rescale" $$w$$ so that no $$|w_i|$$ would be greater than $$w_{max}$$. For instance,
+if $$w_1 > w_{max}$$ and is the biggest wheel speed, then, we can use $$w' = \lambda w$$ as target speed for wheels,
+with $$\lambda = \frac{w_{max}}{w_1}$$.
+
+This works because since $$w = Ms$$ is a linear relationship, then $$\lambda w = M (\lambda s)$$. Hence, rescaling
+$$w$$ is equivalent to rescale $$s$$ (the direction in the task space is preserved).
+
+# A geometrical view of limits
 
 Another way to view the limits is to think them as a set of inequalities:
 
@@ -271,7 +281,7 @@ are possible to achieve when no rotation is involve (the pink area below):
 </div>
 
 You can notice that the cube gets here sliced to an hexagon (I personally finds this geometrical detail elegant, but
-it's up to the taste of everyone!).
+it's up to your taste!).
 
 As mentionned before, the robot's maximum speed is not the same in all the directions.
 
