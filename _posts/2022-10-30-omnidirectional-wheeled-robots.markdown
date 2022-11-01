@@ -222,9 +222,9 @@ w_1 \\ w_2 \\ w_3
 =
 \underbrace{
 \begin{bmatrix}
-{n_1}_x & {n_1}_x & ({n_1}_y x_1 - {n_1}_x y_1) \\
-{n_2}_x & {n_2}_x & ({n_2}_y x_2 - {n_2}_x y_2) \\
-{n_3}_x & {n_3}_x & ({n_3}_y x_3 - {n_3}_x y_3)
+{n_1}_x & {n_1}_y & ({n_1}_y x_1 - {n_1}_x y_1) \\
+{n_2}_x & {n_2}_y & ({n_2}_y x_2 - {n_2}_x y_2) \\
+{n_3}_x & {n_3}_y & ({n_3}_y x_3 - {n_3}_x y_3)
 \end{bmatrix}
 }_M
 \underbrace{
