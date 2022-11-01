@@ -203,7 +203,7 @@ w_i =
 \end{array}
 $$
 
-We obtain a linear relationship between the target (chassis) speed and the linear speed of a wheel.
+We obtain a linear relation between the target (chassis) speed and the linear speed of a wheel.
 
 Note that $$w_i$$ is linear speed expressed in *m/s*, we still need to divide it with our wheel radius if
 we want a speed expressed in *rad/s*.
@@ -253,7 +253,7 @@ Another approach would be to "rescale" $$w$$ so that none $$|w_i|$$ would be gre
 if $$w_1 > w_{max}$$ and is the biggest wheel speed, then, we can use $$w' = \lambda w$$ as target speed for wheels,
 with $$\lambda = \frac{w_{max}}{w_1}$$.
 
-This approach is valid because $$w = Ms$$ is a linear relationship, then $$\lambda w = M (\lambda s)$$.
+This approach is valid because $$w = Ms$$ is a linear relation, then $$\lambda w = M (\lambda s)$$.
 Hence, rescaling $$w$$ is equivalent to rescale $$s$$ (the direction of the target in *task space* is preserved).
 
 # A geometrical view of speed limits
