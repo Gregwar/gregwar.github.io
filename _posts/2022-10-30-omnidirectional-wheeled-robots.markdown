@@ -234,6 +234,8 @@ w_1 \\ w_2 \\ w_3
 }_s
 $$
 
+Note: if the motor drive direction is perpendicular to the position of the wheel, the last column can be simplified to the distance of the wheel to the center of the robot.
+
 If $$M$$ has a full rank, it can be inverted to deduce the chassis speed from the wheels speed:
 
 $$
