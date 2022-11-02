@@ -243,7 +243,7 @@ $$
 # Speed limits
 
 One way to model the motors physical limitations is to consider that they can provide *speeds* under a given
-maximum limit, say $$v_{max}$$.
+maximum limit, say $$w_{max}$$.
 
 If we don't take care of this limit, and increase a target speed $$s$$, we will first saturate the speed of one motor
 (say $$w_1$$), and the speed of other motors will continue tu rise. This will have the effect of getting the robot to
