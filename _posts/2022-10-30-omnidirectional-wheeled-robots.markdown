@@ -234,13 +234,27 @@ w_1 \\ w_2 \\ w_3
 }_s
 $$
 
-Note: if the motor drive direction is perpendicular to the position of the wheel, the last column can be simplified to the distance of the wheel to the center of the robot.
+Note: if the motor drive direction is perpendicular to the position of the wheel, then $$M$$ can be simplified to:
+
+$$
+\begin{bmatrix}
+{n_1}_x & {n_1}_y & d \\
+{n_2}_x & {n_2}_y & d \\
+{n_3}_x & {n_3}_y & d
+\end{bmatrix}
+$$
+
+Where $$d$$ is the distance between the wheels and the center of the robot.
+
+## Direct kinematics
 
 If $$M$$ has a full rank, it can be inverted to deduce the chassis speed from the wheels speed:
 
 $$
 s = M^{-1} w
 $$
+
+This is the direct kinematics model. It can be used to compute the *odometry* of the robot for instance.
 
 # Speed limits
 
