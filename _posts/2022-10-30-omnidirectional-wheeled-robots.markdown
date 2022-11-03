@@ -297,6 +297,12 @@ You can notice that the cube gets here sliced to an hexagon (I personally finds 
 it's up to your taste!).
 
 As you can notice, the robot speed capabilities are not the same in all the directions.
+Actually, if you notice that speed limits are reached when the target speed is collinear with a wheel, you can intuite
+this hexagon:
+
+<center>
+    <img src="/assets/robotics/holo_limits.png" width="200" />
+</center>
 
 # See also / references
 
