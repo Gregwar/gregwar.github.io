@@ -234,6 +234,8 @@ w_1 \\ w_2 \\ w_3
 }_s
 $$
 
+Note: if the motor drive direction is perpendicular to the position of the wheel, the last column can be simplified to the distance of the wheel to the center of the robot.
+
 If $$M$$ has a full rank, it can be inverted to deduce the chassis speed from the wheels speed:
 
 $$
@@ -243,7 +245,7 @@ $$
 # Speed limits
 
 One way to model the motors physical limitations is to consider that they can provide *speeds* under a given
-maximum limit, say $$v_{max}$$.
+maximum limit, say $$w_{max}$$.
 
 If we don't take care of this limit, and increase a target speed $$s$$, we will first saturate the speed of one motor
 (say $$w_1$$), and the speed of other motors will continue tu rise. This will have the effect of getting the robot to
