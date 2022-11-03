@@ -7,7 +7,7 @@ tags: robotics kinematics omnidirectional wheels
 ---
 
 <figure class="float-right">
-    <img src="/assets/robotics/holo.svg" width="150" />
+    <img src="/assets/robotics/holo.png" width="150" />
 </figure>
 
 Omni-directional robots (sometime called holonomic robots) are platforms designed to allow a wide range of
