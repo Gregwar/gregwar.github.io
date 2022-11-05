@@ -22,7 +22,7 @@ going to explain in detail in this post.
 
 # Velocity
 
-To focus on kinematics, we will consider the motors as sources of *speeds*. The very first question
+To focus on kinematics, we will consider the motors as sources of *velocities*. The very first question
 we might ask is: what are the nature of velocities our robot could possibly achieve?
 
 The velocity of an object can be described with the velocity of all its particles. However, our robot is a *rigid body*,
@@ -47,7 +47,7 @@ Before we go any further, we will remind basic tools that are important to deriv
 ## Cross product
 
 First, let's define an axis of rotation $$\vec \omega$$ as a vector which orientation indicates us about which
-axis we are rotating, and which norm is the speed of rotation (in *rad/s*).
+axis we are rotating, and which norm is the velocity of rotation (in *rad/s*).
 
 Suppose a point $$P$$ rotates around this axis, and we know some point $$O$$ belonging to the axis (thus, its
 velocity caused by the rotation is zero).
@@ -105,7 +105,7 @@ $$
 \end{array}
 $$
 
-In other words, if we know the velocity $$\vec v_1$$ of a particular point $$P_1$$ and the speed of rotation
+In other words, if we know the velocity $$\vec v_1$$ of a particular point $$P_1$$ and the velocity of rotation
 $$\vec \omega$$, we can deduce the velocity of any other point $$P_2$$ using the relation
 $$\vec v_2 = \vec v_1 + \vec \omega \times \vec {P_1 P_2}$$. The whole vector field mentioned before is totally known.
 In particular, the need of a known point belonging to the rotation axis vanishes.
@@ -136,7 +136,7 @@ express it in this frame,
 wheel is going to turn and drive. Since they are of unit length, they can be parameterized using
 only one number (like an angle with the *x-axis*).
 
-## Deriving wheel speeds
+## Deriving wheel velocities
 
 We'll start with our desired velocity, that we will express in the chassis frame:
 
@@ -164,7 +164,7 @@ v_o =
 \end{matrix}
 $$
 
-With $$v_o$$ being the velocity of the robot's origin and $$\omega$$ the robot's rotation speed. The zeros are here
+With $$v_o$$ being the velocity of the robot's origin and $$\omega$$ the robot's rotation velocity. The zeros are here
 because we are in 3D (the robot is not moving upward and is not tilting forward or laterally).
 
 Thanks to *Varignon's formula*, we can now express the resulting velocity in the wheels:
@@ -203,14 +203,14 @@ w_i =
 \end{array}
 $$
 
-We obtain a linear relation between the target (chassis) velocity and the linear speed of a wheel.
+We obtain a linear relation between the target (chassis) velocity and the linear velocity of a wheel.
 
-Note that $$w_i$$ is linear speed expressed in *m/s*, we still need to divide it with our wheel radius if
-we want a speed expressed in *rad/s*.
+Note that $$w_i$$ is linear velocity expressed in *m/s*, we still need to divide it with our wheel radius if
+we want a rotation velocity expressed in *rad/s*.
 
 ## Matrix notation
 
-Since everything is linear, we can then express the speed of our wheels as a linear transformation of the
+Since everything is linear, we can then express the velocity of our wheels as a linear transformation of the
 desired chassis velocity:
 
 $$
@@ -248,7 +248,7 @@ Where $$d$$ is the distance between the wheels and the center of the robot.
 
 ## Direct kinematics
 
-If $$M$$ has a full rank, it can be inverted to deduce the chassis velocity from the wheels speed:
+If $$M$$ has a full rank, it can be inverted to deduce the chassis velocity from the wheels velocity:
 
 $$
 s = M^{-1} w
@@ -256,23 +256,23 @@ $$
 
 This is the direct kinematics model. It can be used to compute the *odometry* of the robot for instance.
 
-# Speed limits
+# Velocity limits
 
-One way to model the motors physical limitations is to consider that they can provide *speeds* under a given
+One way to model the motors physical limitations is to consider that they can provide *velocities* under a given
 maximum limit, say $$w_{max}$$.
 
-If we don't take care of this limit, and increase a target speed $$s$$, we will first saturate the speed of one motor
-(say $$w_1$$), and the speed of other motors will continue to rise. This will have the effect of getting the robot to
+If we don't take care of this limit, and increase a target velocity $$s$$, we will first saturate the velocity of one motor
+(say $$w_1$$), and the velocity of other motors will continue to rise. This will have the effect of getting the robot to
 move in a different direction than the one initially desired.
 
 Another approach would be to "rescale" $$w$$ so that none $$|w_i|$$ would be greater than $$w_{max}$$. For instance,
-if $$w_1 > w_{max}$$ and is the biggest wheel speed, then, we can use $$w' = \lambda w$$ as target speed for wheels,
+if $$w_1 > w_{max}$$ and is the biggest wheel velocity, then, we can use $$w' = \lambda w$$ as target velocity for wheels,
 with $$\lambda = \frac{w_{max}}{w_1}$$.
 
 This approach is valid because $$w = Ms$$ is a linear relation, then $$\lambda w = M (\lambda s)$$.
 Hence, rescaling $$w$$ is equivalent to rescale $$s$$ (the direction of the target in *task space* is preserved).
 
-# A geometrical view of speed limits
+# A geometrical view of velocity limits
 
 Another way to view the limits is to think them as a set of inequalities:
 
@@ -297,8 +297,8 @@ Here is the result for a robot with three wheels dispatched evenly at 120° (lik
 </center>
 </div>
 
-Any point in this new shape is a valid velocity in the task space (a velocity giving feasible wheel speeds).
-If we slice this cube where $$\dot \theta = 0$$, we can visualize what speeds are possible to achieve when no rotation
+Any point in this new shape is a valid velocity in the task space (a target velocity giving feasible wheel velocities).
+If we slice this cube where $$\dot \theta = 0$$, we can visualize what velocities are possible to achieve when no rotation
 is involved (the violet area below):
 
 <div class="mb-3">
@@ -311,7 +311,7 @@ You can notice that the cube gets here sliced to an hexagon (I personally finds 
 it's up to your taste!).
 
 As you can notice, the robot velocity capabilities are not the same in all the directions.
-Actually, if you notice that velocity limits are reached when the target speed is collinear with a wheel, you can
+Actually, if you notice that velocity limits are reached when the target velocity is collinear with a wheel, you can
 intuite this hexagon:
 
 <center>
