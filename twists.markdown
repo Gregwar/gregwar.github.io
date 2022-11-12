@@ -6,6 +6,8 @@ date:   2022-03-05 16:00:00 +0200
 tags: twists algebra
 ---
 
+<!-- s V sb: le torseur de b vers s exprimé dans s -->
+
 Twists are extensively used in mechanics, since they can represent the motion
 of a rigid body. They are also used by Jacobians to relate the the rate of change of robot's
 joint with the associated twist, and thus give a linear approximation of the robot behavior
@@ -118,75 +120,24 @@ and the adjoint representation of the spatial twist of $$T_2$$ expressed in $$T_
 
 # Twist of inverse
 
-What is the twist of $$T^{-1}$$ ? Remember that in an articulated robot:
+What is the twist of $$T^{-1}$$ ? Since:
 
 $$
-T = e^{[S_1] \theta_1}  ... e^{[S_1] \theta_n} M
+T T^{-1} = I \\
+\dot{T T^{-1}} = 0 \\
+\dot T T^{-1} + T \dot{(T^{-1})} = 0 \\
+\dot{(T^{-1})} = - T^{-1} \dot T T^{-1}
 $$
 
-Where $$[S_i]$$ are the spatial screw axises of joints. thus:
+Then:
 
 $$
-T^{-1} = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1}
+\dot {(T^{-1})} T = - T^{-1} \dot T T^{-1} T \\
+= - T^{-1} \dot T \\
+= - T^{-1} \dot T T^{-1} T \\
+= - T^{-1} [ \nu_s ] T \\
+= - [Ad_{T^{-1}} (\nu_s)]
 $$
-
-And:
-
-$$
-\begin{split}
-\dot {(T^{-1})} & = M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_1] \theta_1} [S_1] (-\dot \theta_1) \\
-              & + M^{-1} e^{-[S_n] \theta_n} ... e^{-[S_2] \theta_2} [S_2] (-\dot \theta_2) e^{-[S_1] \dot \theta_1} \\
-              & + ... 
-
-\end{split}
-$$
-
-Plugging all together:
-
-$$
-\begin{split}
-\dot {(T^{-1})} T
-= &
-\sum_i
-M^{-1}
-e^{-[S_n] \theta_n}
-...
-e^{-[S_i] \theta_i}
-[S_i] (-\dot \theta_i)
-e^{[S_i] \theta_i}
-...
-e^{-[S_n] \theta_n}
-M
-\\
-= &
-\sum_i
-e^{-[B_n] \theta_n}
-...
-e^{-[B_i] \theta_i}
-[B_i] (-\dot \theta_i)
-e^{[B_i] \theta_i}
-...
-e^{-[B_n] \theta_n}
-\\
-= &
-- \sum_i
-[Ad_{
-e^{-[B_n] \theta_n}
-...
-e^{-[B_i] \theta_i}
-}]
-[B_i] (\dot \theta_i)
-\\
-= &
-- [ \nu_b ]
-\\
-= &
-- [Ad_{T^{-1}}(\nu_s) ]
-\end{split}
-$$
-
-Where $$[B_i]$$ is the body screw axis for joint $$i$$. The above derivation is actually
-very similar to the one from te body Jacobian (see [Chapter 5.1.2 in Modern Robotics](http://hades.mech.northwestern.edu/images/7/7f/MR.pdf)).
 
 # Relative twist
 
@@ -199,21 +150,21 @@ Thus, the spatial twist is:
 
 $$
 \begin{split}
-[ \nu_s ] 
+[ {}_a \nu_{ab} ] 
 = &
-- [Ad_{T_{sa}^{-1}}( \nu_{s_a} ) ]
+- [Ad_{T_{sa}^{-1}}( {}_s \nu_{sa} ) ]
 +
-[Ad_{T_{sa}^{-1}}( \nu_{s_b} ) ]
+[Ad_{T_{sa}^{-1}}( {}_s \nu_{sb} ) ]
 \\
 = &
-[Ad_{T_{sa}^{-1}}( \nu_{s_b} - \nu_{s_a} ) ]
+[Ad_{T_{sa}^{-1}}( {}_s \nu_{sb} - {}_s \nu_{sa} ) ]
 \end{split}
 $$
 
-The spatial twist $$\nu_s$$ of $$T_{ab}$$ can then be computed as the spatial twist
-$$\nu_{s_a}$$ of $$T_{sa}$$ and the spatial twist $$\nu_{s_b}$$ of $$T_{sb}$$. Note that
-$$\nu_s$$ is seen from the body $$a$$, if you want to see it from the world, you will
-have to multiply by $$[Ad_{T_{sa}}]$$, and this will simply become $$\nu_{s_b} - \nu_{s_a}$$.
+The spatial twist $${}_a \nu_{ab}$$ of $$T_{ab}$$ can then be computed as the spatial twist
+$${}_s \nu_{sa}$$ of $$T_{sa}$$ and the spatial twist $${}_s \nu_{sb}$$ of $$T_{sb}$$. Note that
+$${}_a \nu_{ab}$$ is seen from the body $$a$$, if you want to see it from the world, you will
+have to multiply by $$[Ad_{T_{sa}}]$$, and this will simply become $${}_s \nu_{sb} - {}_s \nu_{sa}$$.
 
 <!-- TODO: Mention the calculation using floating base -->
 
