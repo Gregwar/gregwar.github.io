@@ -356,7 +356,7 @@ If you think about it, with this $$P$$, the resulting score will be the sum of t
 the sum of the (squared) forces times $$\epsilon$$. This means that the main priority is to find the solution
 with the minimum torques, and the second priority (with a very small weight) is to minimize contact forces.
 
-This trick is required since the forces are part of our optimization variables dans the *QP solver* needs a score
+This trick is required since the forces are part of our optimization variables and the *QP solver* needs a score
 to be minimized for all those variables.
 
 ## Equality constraint
