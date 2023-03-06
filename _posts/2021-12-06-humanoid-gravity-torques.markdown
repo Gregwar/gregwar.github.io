@@ -35,9 +35,11 @@ Where:
 * $$g(q)$$ is the generalized gravity,
 * $$\tau$$ are the degrees of freedom torque.
 
-If we want no acceleration $$\dot v = 0$$, and we ignore other non linear effects ($$h$$), we get:
+For a static position, velocity $$v$$ and acceleration $$\dot v$$ are zero, and the equation becomes:
 
 $$\tau = g(q)$$
+
+(Note that $$h$$ vanishes when $$v$$ is zero).
 
 Thus, for any "static" robot like a robotic arm anchored to the ground, we can simply stop here.
 The generalized gravity is indeed directly the joint torques we need to compensate gravity.
@@ -151,7 +153,7 @@ Is the only solution of contact forces to balance the equation. We can then subs
 actuated part of equation and get:
 
 $$
-\tau = g_a(q) - (J_l^T)_a f_l
+\tau = g_a(q) - (J_l^T)_a (J_l^T)_u^{-1} g_u(q)
 $$
 
 Which are the torques needed on the robot joints.
@@ -184,7 +186,7 @@ g_u(q) = (J_l^T)_u f_l + (J_r^T)_u f_r \space \space (4)
 \\
 g_l(q) = \tau_l + (J_l^T)_l f_l + \underbrace{(J_r^T)_l}_0 f_r  \space \space (5)
 \\
-g_r(q) = \tau_l + \underbrace{(J_l^T)_r}_0 f_l + (J_r^T)_r f_r  \space \space (6)
+g_r(q) = \tau_r + \underbrace{(J_l^T)_r}_0 f_l + (J_r^T)_r f_r  \space \space (6)
 \end{cases}
 $$
 
@@ -214,8 +216,8 @@ Where $$\dagger$$ denotes the [Moore-Penrose pseudo-inverse](https://en.wikipedi
 (*Note: With Numpy, you can use [np.linalg.pinv](https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html),
 and with Eigen you can use [computeOrthogonalDecomposition().solve()](https://eigen.tuxfamily.org/dox/classEigen_1_1CompleteOrthogonalDecomposition.html#title32).*)
 
-That would give us the solution that minimizes contact forces (more precisely $$|| f ||^2$$). But if you want to
-control an humanoid robot, it is more likely that what you want to minimize is the torques used in motors instead.
+That would give us the solution that minimizes contact forces (more precisely $$|| f_l ||^2 + || f_r ||^2$$). But if you want to
+control a humanoid robot, it is more likely that what you want to minimize is the torques used in the motors instead.
 
 ## Minimizing torques
 
@@ -322,7 +324,7 @@ other torques we could apply. However, the solution with two support feet is und
 an infinite set of solutions.
 
 What we want is to explore those solutions, and select the one that minimizes torques **subject to** some constraints
-on the force (in that case, $$f_z > 0$$, if $$f_z$$ is expressed in proper frame).
+on the force (in that case, $$f_z > 0$$, if $$f_z$$ is expressed in the proper frame).
 
 To achieve this, we can formulate the problem as a *quadratic programming* (QP) problem and invoke a solver.
 Such a solver can address problems of the form:
@@ -381,7 +383,7 @@ g
 }_b
 $$
 
-Here, again, $$u$$ and $$a$$ subscript reffers to unactuated and actuated parts of the jacobian.
+Here, again, $$u$$ and $$a$$ subscript refers to unactuated and actuated parts of the jacobian.
 
 ## Inequality constraint
 
@@ -438,4 +440,4 @@ This is what is achieved in solvers like [TSID (Task-Space Inverse Dynamics)](ht
 In such setup, you minimize a score function subject to equation $$(2)$$, using some solver like [Quadratic
 Programming](https://en.wikipedia.org/wiki/Quadratic_programming).
 
-Thanks to [Stéphane Caron](https://scaron.info/) for proof-reading, comments and typos feedbacks.
+Thanks to [Stéphane Caron](https://scaron.info/) and Marcos Maximo for proof-reading, comments and typos feedbacks.
