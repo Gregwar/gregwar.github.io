@@ -11,13 +11,13 @@ Here is an overview of my GitHub repositories with some description.
 
 # Robotics
 
+* [Robot Soccer Kit](https://robot-soccer-kit.github.io/)
+    * A robotics setup including low-cost holonomic robot, field and camera for tracked applications
 * [onshape-to-robot](https://github.com/rhoban/onshape-to-robot)
     * A tool to automatically translate your Onshape CAD robot to some URDF/SDF description file
     ([see the blog post]({% post_url 2021-02-24-onshape-to-robot %}))
 * [ForceFoot](https://github.com/Rhoban/ForceFoot)
     * Low-cost pressure sensors for small humanoid robots
-* [junior-ssl](https://github.com/rhoban/junior-ssl)
-    * A robotics setup including low-cost holonomic robot, field and camera for tracked applications
 * [Metabot](https://github.com/rhoban/metabot)
     * A low-cost quadruped robot
 
