@@ -19,7 +19,7 @@ what actually happens?
 <img src="assets/box.svg" width="300" class="m-3" />
 </center>
 
-# The free box
+<!--more-->
 
 Suppose first that the box is free (no obstacle or ground).
 If its mass is $$m$$ and its inertia $$I$$, and it is subject to forces $$f_x$$, $$f_y$$ and $$\tau$$ (torque) 
