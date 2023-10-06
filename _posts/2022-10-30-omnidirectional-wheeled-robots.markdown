@@ -101,7 +101,7 @@ $$
 \vec v_2 = \vec \omega \times \vec {OP_2} \\
 \vec v_2 = \vec \omega \times (\vec {OP_1} + \vec {P_1 P_2}) \\
 \vec v_2 = \vec \omega \times \vec {OP_1} + \vec \omega \times \vec {P_1 P_2} \\
-\vec v_2 = \vec v_1 + \vec \omega  \vec {P_1 P_2}
+\vec v_2 = \vec v_1 + \vec \omega \times  \vec {P_1 P_2}
 \end{array}
 $$
 
