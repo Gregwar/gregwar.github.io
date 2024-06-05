@@ -96,9 +96,9 @@ obtain the *space Jacobian*, expressed in a global inertial world frame $$w$$:
 
 $${}^w \omega_a = {}^w J_a^{\omega} \dot q$$
 
-$${}^w p_a = {}^w J_a^{p} \dot q$$
+$${}^w v_a = {}^w J_a^{v} \dot q$$
 
-Where $${}^w p_a$$ stands for the position of $$a$$ in the world $$w$$.
+Where $${}^w v_a$$ stands for the linear velocity of $$a$$ in the world $$w$$.
 The two Jacobians mentioned above are the oned obtained with the `LOCAL_WORLD_ALIGNED` mode in Pinocchio.
 The angular velocity is equivalent to the one obtained in `WORLD` Jacobian.
 However, the linear velocity you would obtain in the `WORLD` Jacobian would be the linear velocity of a point
