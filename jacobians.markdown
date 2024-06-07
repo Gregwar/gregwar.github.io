@@ -230,7 +230,7 @@ And applying identity $$(3)$$:
 $$
     {}^a \dot R_w {}^w \vec {ab}
     =
-    [ {}^a R_w {}^w \vec {ab} ]
+    [ {}^a \vec {ab} ]
     {}^w R_a
     {}^w \omega_a
 $$
@@ -240,7 +240,7 @@ Since we know how to compute $${}^a J_b^{\omega}$$, we can now express this firs
 $$
     {}^a \dot R_w {}^w \vec {ab}
     =
-    [ {}^a R_w {}^w \vec {ab} ]
+    [ {}^a \vec {ab} ]
     {}^w R_a
     {}^a J_b^{\omega} \dot q
 $$
@@ -268,7 +268,7 @@ $$
     =
     \underbrace{
     (
-    [ {}^a R_w {}^w \vec {ab} ]
+    [ {}^a \vec {ab} ]
     {}^w R_a
     {}^a J_b^{\omega}
     +
