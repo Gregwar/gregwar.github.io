@@ -177,3 +177,103 @@ $$
     \underbrace{ {}^a R_w ( {}^w J_b^{\omega} - {}^w J_a^{\omega}) }_{ {}^a J^\omega_b } \dot q
 $$
 
+### Relative positions
+
+Let's write $${}^w \vec {ab}$$ the coordinates of vector $$\vec{ab}$$ in frame $$w$$.
+We now want to find the following Jacobian:
+
+$$
+    {}^a \dot{\vec {ab} } = {}^a J^v_b \dot q
+$$
+
+We can write:
+
+$$
+    {}^a \vec {ab} = {}^a R_w {}^w \vec {ab}
+$$
+
+Evaluating the derivative with respect to time, we obtain:
+
+$$
+    {}^a \dot{\vec {ab} }
+    =
+    {}^a \dot R_w {}^w \vec {ab}
+    +
+    {}^a R_w {}^w \dot{\vec {ab}}
+    \space \space \space (4)
+$$
+
+Intuitively, the first term comes from the apparent motion of $$b$$ because of the rotation of frame $$a$$.
+The second term comes from the relative motion of $$a$$ and $$b$$.
+
+#### Let's first deal with the first term $${}^a \dot R_w {}^w \vec {ab}$$ of equation $$(4)$$:
+
+$$
+    {}^a \dot R_w {}^w \vec {ab}
+    =
+    [ {}^a \omega_w]_{\times} {}^a R_w {}^w \vec {ab}    
+$$
+
+Because $$[]_{\times}$$ represents the cross product, which is anti-symmetric, we can write:
+
+
+$$
+    {}^a \dot R_w {}^w \vec {ab}
+    =
+    -
+    [ {}^a R_w {}^w \vec {ab} ]
+    {}^a \omega_w
+$$
+
+And applying identity $$(3)$$:
+
+$$
+    {}^a \dot R_w {}^w \vec {ab}
+    =
+    [ {}^a R_w {}^w \vec {ab} ]
+    {}^w R_a
+    {}^w \omega_a
+$$
+
+Since we know how to compute $${}^a J_b^{\omega}$$, we can now express this first term with respect to $$\dot q$$:
+
+$$
+    {}^a \dot R_w {}^w \vec {ab}
+    =
+    [ {}^a R_w {}^w \vec {ab} ]
+    {}^w R_a
+    {}^a J_b^{\omega} \dot q
+$$
+
+#### Now with the second term of equation $$(4)$$:
+
+$$
+    {}^a R_w {}^w \dot{\vec {ab}}
+    =
+    {}^a R_w [ {}^w \dot{\vec {wb}} - {}^w \dot{\vec {wa}} ]
+$$
+
+Since we know how to compute $${}^a J_b^{v}$$, we can express this second term with respect to $$\dot q$$:
+
+$$
+    {}^a R_w {}^w \dot{\vec {ab}}
+    =
+    {}^a R_w [ {}^w J_b^v - {}^w J_a^v ] \dot q
+$$
+
+#### Putting it all together:
+
+$$
+    {}^a \dot{\vec {ab} }
+    =
+    \underbrace{
+    (
+    [ {}^a R_w {}^w \vec {ab} ]
+    {}^w R_a
+    {}^a J_b^{\omega}
+    +
+    {}^a R_w [ {}^w J_b^v - {}^w J_a^v ]
+    )
+    }_{ {}^a J^v_b}
+    \dot q
+$$
