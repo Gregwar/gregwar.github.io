@@ -1,11 +1,16 @@
 ---
 layout: default
-title:  "Jacobians"
+title:  "Relative Jacobians"
 permalink: /jacobians
 date:   2024-06-05 18:00:00 +0200
 tags:
  - kinematics
 ---
+
+# Relative Jacobians
+
+This post is a comprehensive explanation of how to derive relative Jacobians by using underlying libraries like
+[Pinocchio](https://github.com/stack-of-tasks/pinocchio).
 
 ## Rotation matrices
 
