@@ -226,7 +226,7 @@ $$
     {}^a \dot R_w {}^w \vec {ab}
     =
     -
-    [ {}^a R_w {}^w \vec {ab} ]
+    [ {}^a R_w {}^w \vec {ab} ]_{\times}
     {}^a \omega_w
 $$
 
@@ -235,19 +235,19 @@ And applying identity $$(3)$$:
 $$
     {}^a \dot R_w {}^w \vec {ab}
     =
-    [ {}^a \vec {ab} ]
-    {}^w R_a
+    [ {}^a \vec {ab} ]_{\times}
+    {}^a R_w
     {}^w \omega_a
 $$
 
-Since we know how to compute $${}^a J_b^{\omega}$$, we can now express this first term with respect to $$\dot q$$:
+We can now express this first term with respect to $$\dot q$$:
 
 $$
     {}^a \dot R_w {}^w \vec {ab}
     =
-    [ {}^a \vec {ab} ]
-    {}^w R_a
-    {}^a J_b^{\omega} \dot q
+    [ {}^a \vec {ab} ]_{\times}
+    {}^a R_w
+    {}^w J_a^{\omega} \dot q
 $$
 
 #### Now with the second term of equation $$(4)$$:
@@ -255,7 +255,7 @@ $$
 $$
     {}^a R_w {}^w \dot{\vec {ab}}
     =
-    {}^a R_w [ {}^w \dot{\vec {wb}} - {}^w \dot{\vec {wa}} ]
+    {}^a R_w [ {}^w \dot{\vec {wb}} - {}^w \dot{\vec {wa}} ]_{\times}
 $$
 
 We can express this second term with respect to $$\dot q$$:
@@ -263,7 +263,7 @@ We can express this second term with respect to $$\dot q$$:
 $$
     {}^a R_w {}^w \dot{\vec {ab}}
     =
-    {}^a R_w [ {}^w J_b^v - {}^w J_a^v ] \dot q
+    {}^a R_w [ {}^w J_b^v - {}^w J_a^v ]_{\times} \dot q
 $$
 
 #### Putting it all together:
@@ -273,11 +273,11 @@ $$
     =
     \underbrace{
     (
-    [ {}^a \vec {ab} ]
-    {}^w R_a
-    {}^a J_b^{\omega}
+    [ {}^a \vec {ab} ]_{\times}
+    {}^a R_w
+    {}^w J_a^{\omega}
     +
-    {}^a R_w [ {}^w J_b^v - {}^w J_a^v ]
+    {}^a R_w [ {}^w J_b^v - {}^w J_a^v ]_{\times}
     )
     }_{ {}^a J^v_b}
     \dot q
