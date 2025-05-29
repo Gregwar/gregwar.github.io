@@ -97,7 +97,7 @@ the joint-space velocity (in the tangent space) sometime doesn't have the same d
 Let's use the notation $$J^\omega$$ for angular velocity Jacobian and $$J^p$$ for linear velocity jacobian.
 
 When using rigid body library (like [Pinocchio](https://github.com/stack-of-tasks/pinocchio)), we can compute
-obtain the *space Jacobian*, expressed in a global inertial world frame $$w$$:
+the *space Jacobian*, expressed in a global inertial world frame $$w$$:
 
 $${}^w \omega_a = {}^w J_a^{\omega} \dot q$$
 
@@ -258,7 +258,7 @@ $$
     {}^a R_w [ {}^w \dot{\vec {wb}} - {}^w \dot{\vec {wa}} ]
 $$
 
-Since we know how to compute $${}^a J_b^{v}$$, we can express this second term with respect to $$\dot q$$:
+We can express this second term with respect to $$\dot q$$:
 
 $$
     {}^a R_w {}^w \dot{\vec {ab}}
