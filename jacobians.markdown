@@ -72,10 +72,27 @@ $$\dot R^T = - R^T \dot R R^T$$
 Then:
 
 $$
-    {}^b \dot R_a = [{}^b \omega_a]_{\times} {}^b R_a = - {}^b R_a [ {}^a \omega_b]_{\times}
+    {}^b \dot R_a
+    =
+    - {}^b R_a {}^a \dot R_b {}^b R_a
+    =
+    - {}^b R_a 
+      [ {}^a \omega_b]_{\times} {}^a R_b
+      {}^b R_a
+    =
+    - {}^b R_a 
+      [ {}^a \omega_b]_{\times} 
 $$
 
-By multiplying on the right by $${}^a R_b$$, and applying the identity mentioned in previous section:
+We also have:
+
+$$
+    {}^b \dot R_a
+    =
+    [{}^b \omega_a]_{\times} {}^b R_a
+$$
+
+By combining the two previous equations and applying the identity mentioned in previous section:
 
 $$
     [{}^b \omega_a]_{\times} = - [ {}^b R_a {}^a \omega_b]_{\times}
