@@ -16,6 +16,8 @@ Here is an overview of my GitHub repositories with some description.
 * [onshape-to-robot](https://github.com/rhoban/onshape-to-robot)
     * A tool to automatically translate your Onshape CAD robot to some URDF/SDF description file
     ([see the blog post]({% post_url 2021-02-24-onshape-to-robot %}))
+* [placo](https://placo.readthedocs.io/)
+    * Constrained inverse kinematics and dynamics formulation and solving using Quadratic Programming
 * [ForceFoot](https://github.com/Rhoban/ForceFoot)
     * Low-cost pressure sensors for small humanoid robots
 * [Metabot](https://github.com/rhoban/metabot)
