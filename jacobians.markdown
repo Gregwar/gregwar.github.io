@@ -130,7 +130,7 @@ attached to the given object, but that would be at the origin of the world frame
 
 Now, suppose we have two frames attached to our robot, $$a$$ and $$b$$, and we want to derive the relative Jacobian
 (i.e. the angular and linear velocity of $$b$$ expressed in $$a$$).
-Moreover, we'd like to compute it from previosuly mentioned Jacobians that we can compute using our underlying
+Moreover, we'd like to compute it from previously mentioned Jacobians that we can compute using our underlying
 library.
 We would like to have:
 
